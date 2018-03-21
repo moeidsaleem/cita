@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-navbar hideBackButton color="primary">
+    <ion-buttons left>
+        <button ion-button icon-only (click)="onBackButton()" >
+            <ion-icon name="arrow-back"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title center style="font-size:4px;">{{ 'patients' | translate }}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+
+
+        <ion-list-header>
+            <p class="info">{{ 'first_name' | translate }}</p>
+        </ion-list-header>
+
+        <ion-item no-lines>
+            <ion-input end type="text" required [(ngModel)]="patient_f_name" placeholder="{{ 'first_name' | translate }}"></ion-input>
+        </ion-item>
+        <ion-list-header>
+            <p class="info">{{ 'last_name' | translate }}</p>
+        </ion-list-header>
+
+        <ion-item no-lines>
+            <ion-input end type="text" required [(ngModel)]="patient_l_name" placeholder="{{ 'last_name' | translate }}"></ion-input>
+        </ion-item>
+        <ion-list-header>
+            <p class="info">{{ 'mobile_phone' | translate }}</p>
+        </ion-list-header>
+
+        <ion-item no-lines>
+            <ion-input end type="text" required [(ngModel)]="mobile_number" placeholder="{{ 'mobile_phone' | translate }}"></ion-input>
+        </ion-item>
+        <ion-list-header>
+            <p class="info">{{ 'email' | translate }}</p>
+        </ion-list-header>
+
+        <ion-item no-lines>
+            <ion-input end type="email" required [(ngModel)]="email" placeholder="{{ 'email' | translate }}"></ion-input>
+        </ion-item>
+        <ion-list-header>
+            <p class="info">{{ 'street_address' | translate }}</p>
+        </ion-list-header>
+
+        <ion-item no-lines>
+            <ion-input end type="text" required [(ngModel)]="street_address" placeholder="{{ 'street_address' | translate }}"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-icon item-start name="person"></ion-icon>
+            <ion-label>{{ 'gender' | translate }}</ion-label>
+            <ion-select  [(ngModel)]="gender" required class="lolSelect selectWrapper ">
+              <ion-option value="male">Male</ion-option>
+              <ion-option value="Female">Female</ion-option>
+            </ion-select>
+            <ion-icon item-end name="arrow-down"></ion-icon>
+          </ion-item>
+          <hr>
+
+    </ion-list>
+</ion-content>
+<ion-footer>
+    <button ion-button full color="danger" [disabled]="!patient_f_name || !street_address || !email || !mobile_number || !patient_l_name || !gender " (click)="AddPatient()">{{ 'working_hours_update' | translate }}
+  </button>
+</ion-footer>
+
+

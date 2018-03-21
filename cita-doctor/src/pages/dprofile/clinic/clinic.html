@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar hideBackButton color="primary">
+        <ion-buttons left>
+            <button ion-button icon-only (click)="onBackButton()" >
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title center style="font-size:4px;">{{ 'clinic_information' | translate }}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+       
+    <ion-list>
+
+
+        <ion-list-header>
+            <p class="info">{{ 'clinic_information_clinic_name' | translate }}</p>
+        </ion-list-header>
+
+        <ion-item no-lines>
+            <ion-input end type="text" required [(ngModel)]="clinic_name" placeholder="{{ 'clinic_name' | translate }}"></ion-input>
+        </ion-item>
+        <hr>
+        <ion-list-header>
+            <p class="info">{{ 'clinic_information_phone' | translate }}</p>
+        </ion-list-header>
+
+        <ion-item no-lines>
+            <ion-input end type="number" required [(ngModel)]="assisstant_number" placeholder="0900 78601"></ion-input>
+        </ion-item>
+
+        <hr>
+
+    </ion-list>
+</ion-content>
+<ion-footer>
+    <button ion-button full color="danger" (click)="UpdateNameAddress()">{{ 'clinic_information_update' | translate }}
+  </button>
+</ion-footer>

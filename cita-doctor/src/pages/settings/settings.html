@@ -1,0 +1,60 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+         
+      <ion-title>{{ 'settings' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg">
+
+    <img class="ima" src="assets/imgs/logowa.png"alt="Avatar"/>
+
+
+    <br> <br>
+    
+
+
+                <ion-list>
+                  <ion-card class="ab" (click) = "openSettingsModal()">
+                    <ion-list-header style="padding-top:0px;">
+                        <p class="info">{{ 'account_settings' | translate }}</p>
+                        <ion-icon item-start name="settings" color="primary"></ion-icon>
+                        <ion-icon item-end name="arrow-dropright" color="primary"></ion-icon>
+                      </ion-list-header>
+                    </ion-card>
+
+                    <ion-card class="ab" (click)="Language()">
+                        <ion-list-header style="padding-top:0px;">
+                            <p class="info">{{ 'language' | translate }}</p>
+                            <ion-icon item-start name="logo-chrome" color="primary"></ion-icon>
+                            <ion-icon item-end name="arrow-dropright" color="primary"></ion-icon>
+                          </ion-list-header>
+                        </ion-card>
+
+                        <ion-list radio-group *ngIf="language" [(ngModel)]="lng" (ionChange)="app.ChangeLanguage(lng)">
+                          <ion-item>
+                            <ion-label>English</ion-label>
+                            <ion-radio value="english" checked></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Arabic</ion-label>
+                            <ion-radio value="arabic"></ion-radio>
+                          </ion-item>
+                         
+                        </ion-list>
+
+                        <ion-card class="ab" (click)="auth.logout()">
+                            <ion-list-header style="padding-top:0px;">
+                                <p class="info">{{ 'logout' | translate }}</p>
+                                <ion-icon item-start name="lock" color="primary"></ion-icon>
+                                  </ion-list-header>
+                            </ion-card>
+                </ion-list>
+
+
+  
+</ion-content>

@@ -1,0 +1,164 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-icon start name="close-circle" (click)="dismiss()" style="margin-left:5px;color:#ffffff;"></ion-icon>
+    <ion-title center style="font-size:4px;">About the Doctor</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list >
+    <!--About Doctor Start -->
+
+      <!-- <ion-list-header>
+          <p class="info">About the Doctor</p>
+          <ion-icon item-start name="logo-tux"></ion-icon>
+        </ion-list-header>
+        <ion-item style="background-color:transparent;">
+          <textarea #myInput id="myInput" placeholder="details about doc here" rows="1" maxLength="500" (keyup)="resize()" [(ngModel)]="myStuff"></textarea>
+        </ion-item>
+        <ion-item style="background-color:transparent;">
+          <textarea #myInput id="myInput" placeholder="إنتا معلم و حنا منك نتعلم" rows="1" maxLength="500" (keyup)="resize()" [(ngModel)]="myStuff"></textarea>
+        </ion-item> 
+      -->
+    <!--About Doctor End -->
+
+    <!--Medical Speciality Start -->
+     <!-- 
+        <ion-list-header>
+          <p class="info">Medical Speciallities</p>
+          <ion-icon item-start name="logo-tux"></ion-icon>
+        </ion-list-header>
+        <ion-item>
+          <ion-icon item-start name="medkit"></ion-icon>
+          <ion-label>Main Speciallity</ion-label>
+          <ion-select class="lolSelect">
+            <ion-option value="default">All Specialities</ion-option>
+            <ion-option value="a">Dentistry</ion-option>
+            <ion-option value="b">Kanna alaaw</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon item-start name="medkit"></ion-icon>
+          <ion-label>Sub Speciallities</ion-label>
+          <ion-select class="lolSelect" multiple="true">
+            <ion-option value="default">All Specialities</ion-option>
+            <ion-option value="a">Dentistry</ion-option>
+            <ion-option value="b">Kanna alaaw</ion-option>
+          </ion-select>
+        </ion-item>
+      -->
+    <!--Medical Speciality End -->
+
+    <!--Services Start -->
+      <!--
+        <ion-list-header>
+          <p class="info">Services</p>
+          <ion-icon item-start name="logo-tux"></ion-icon>
+        </ion-list-header>
+        <ion-item>
+          <ion-icon item-start name="medkit"></ion-icon>
+          <ion-label>Services</ion-label>
+          <ion-select class="lolSelect" multiple="true">
+            <ion-option value="default">All Specialities</ion-option>
+            <ion-option value="a">Dentistry</ion-option>
+            <ion-option value="b">Kanna alaaw</ion-option>
+          </ion-select>
+        </ion-item>
+      -->
+    <!--Services End -->
+
+    <!--overall profile edit Start -->
+    
+    <ion-list-header>
+        <p class="info">Basic Information</p>
+      </ion-list-header>
+
+
+    <ion-item no-lines>
+        <ion-icon item-start name="medkit" color="primary"></ion-icon>
+        <ion-label>Title</ion-label>
+        <ion-select class="lolSelect selectWrapper " placeholder="Doctor" >
+          <ion-option value="default">Doctor</ion-option>
+          <ion-option value="a">Center</ion-option>
+          <ion-option value="b">Clinic</ion-option>
+          <ion-option value="c">Hospital</ion-option>
+        </ion-select>
+        <ion-icon item-end name="arrow-down" color="primary"></ion-icon>
+    </ion-item>
+    <hr>
+    <ion-item no-lines>
+        <ion-icon item-start name="git-network" color="primary"></ion-icon>
+        <ion-label >First Name</ion-label>
+      <ion-input end type="text" placeholder="Your First Name Goes Here"></ion-input>
+    </ion-item>
+    <hr>
+    <ion-item no-lines>
+        <ion-icon item-start name="git-network" color="primary"></ion-icon>
+        <ion-label >Last Name</ion-label>
+      <ion-input type="text" placeholder="Your Last Name Goes Here"></ion-input>
+    </ion-item>
+    <hr>
+    <ion-item no-lines>
+        <ion-icon item-start name="calendar" color="primary"></ion-icon>
+        <ion-label >Date of Birth</ion-label>
+        <ion-datetime placeholder="01-03-1994"  displayFormat="MM/DD/YYYY"></ion-datetime>
+        <ion-icon item-end name="arrow-down" color="primary"></ion-icon>
+      </ion-item>
+      <hr>
+      <ion-item no-lines>
+          <ion-icon item-start name="people" color="primary"></ion-icon>
+          <ion-label >Gender</ion-label>
+          <ion-select class="lolSelect selectWrapper " placeholder="Male">
+            <ion-option value="default">Male</ion-option>
+            <ion-option value="f">Female</ion-option>
+          </ion-select>
+          <ion-icon item-end name="arrow-down" color="primary"></ion-icon>
+        </ion-item>
+        <hr>
+        <ion-item no-lines>
+            <ion-thumbnail item-start>
+              <img src="assets/imgs/dp.png" width="50%">
+            </ion-thumbnail>
+            <h2>Practice License ID Photo</h2>
+          </ion-item>
+
+        <hr>
+        <ion-list-header style="margin-top:10px;">
+            <p class="info">Professional Information</p>
+          </ion-list-header>
+        
+        <ion-item no-lines>
+            <ion-icon item-start name="medkit" color="primary"></ion-icon>
+            <ion-label>Professional Title</ion-label>
+            <ion-select class="lolSelect selectWrapper " placeholder="Doctor" >
+              <ion-option value="default">Professor</ion-option>
+              <ion-option value="a">Lecturer</ion-option>
+              <ion-option value="b">Consultant</ion-option>
+              <ion-option value="c">Specialist</ion-option>
+              <ion-option value="d">Fellowship</ion-option>
+              <ion-option value="e">Assistant Consultant</ion-option>
+              <ion-option value="f">Assistant Lecturer</ion-option>
+            </ion-select>
+            <ion-icon item-end name="arrow-down"></ion-icon>
+        </ion-item>
+        <hr>
+        <ion-item no-lines>
+            <ion-icon item-start name="logo-octocat" color="primary"></ion-icon>
+            <ion-label >Fulll Professional Title</ion-label>
+          <ion-input end type="text" placeholder="Full Professional Goes Here"></ion-input>
+        </ion-item>
+        <hr>
+        <ion-item no-lines>
+            <ion-thumbnail item-start>
+              <img src="assets/imgs/dp.png" width="50%">
+            </ion-thumbnail>
+            <h2>Professional Title Photo</h2>
+          </ion-item>
+    <!--overall profile edit End -->
+
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <button ion-button full color="danger" (click)="dismiss()">Update
+  </button>
+</ion-footer>

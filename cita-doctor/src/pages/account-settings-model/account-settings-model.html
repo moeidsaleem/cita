@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar hideBackButton color="primary">
+        <ion-buttons left>
+            <button ion-button icon-only (click)="onBackButton()">
+              <ion-icon name="arrow-back"></ion-icon>
+            </button>
+          </ion-buttons>
+        <ion-title center style="font-size:4px;">{{ 'account_settings_page' | translate }}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+
+
+        <ion-list-header>
+            <p class="info">{{ 'account_settings_page_email' | translate }}</p>
+        </ion-list-header>
+
+        <ion-item no-lines>
+            <ion-input end type="text" disabled [(ngModel)]="email"  placeholder="Email"></ion-input>
+        </ion-item>
+        <hr>
+        <ion-list-header>
+            <p class="info">{{ 'account_settings_page_phone' | translate }}</p>
+        </ion-list-header>
+
+        <ion-item no-lines>
+            <ion-input end type="text" [(ngModel)]="phone"  placeholder="0900 78601"></ion-input>
+        </ion-item>
+
+        <hr>
+        <ion-list-header>
+            <p class="info">{{ 'specialization' | translate }}</p>
+        </ion-list-header>
+
+        <ion-item no-lines>
+            <ion-icon item-start name="logo-chrome"></ion-icon>
+            <ion-label style="color:black;">Specializations</ion-label>
+            <ion-select  [(ngModel)]="specialization_id" (ionChange)="SpID(specialization_id)"  required class="lolSelect selectWrapper">       
+              <ion-option *ngFor="let c of specialization" value="{{c.specialization_id}}">{{c.specialization_title}}</ion-option>
+            </ion-select>
+            <ion-icon item-end name="arrow-down"></ion-icon>
+        </ion-item>
+
+    </ion-list>
+</ion-content>
+<ion-footer>
+    <button ion-button full color="danger" (click)="UpdatePhone()">{{ 'working_hours_update' | translate }}
+  </button>
+</ion-footer>

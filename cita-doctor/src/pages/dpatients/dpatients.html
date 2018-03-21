@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>{{ 'patients' | translate }}</ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only (click)="AddPatient()" color="royal">
+            <ion-icon name="person-add"></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  
+  <ion-content padding style="background-color:#ecf0f1;">
+      <ion-searchbar [(ngModel)]="searchValue" (ionChange)="Search(searchValue)" style="background-color:transparent;border:none;"></ion-searchbar>
+      <h4 *ngIf="!doctorPatients">{{ 'no_data' | translate }}</h4>
+    <ion-card class="grad" *ngFor="let d of doctorPatients">
+      <ion-card-content>
+        <ion-card-title>
+          <span style="color:#fff;">{{d.patient_name}} </span>
+        </ion-card-title>
+        <p>{{d.email}}</p>
+        <p>{{d.phone}}</p>
+
+  
+       
+        <button ion-button clear icon-left (click)="OpenPhoneApp(d.phone)">
+            <ion-icon name='call'  is-active="false"></ion-icon>
+        </button>
+        <button ion-button color="secondary" (click)="OpenMessageApp(d.phone)" clear icon-left>
+            <ion-icon name='text'  is-active="false"></ion-icon>
+        </button>
+
+      </ion-card-content>
+    </ion-card>
+  
+
+
+  
+  </ion-content>

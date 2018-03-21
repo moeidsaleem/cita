@@ -1,0 +1,64 @@
+page-settings {
+    .textClass{
+        text-align: center !important;
+    }
+    .textClass .datewa{
+    
+        color:blue;
+    }
+    
+    .textClass .appointwa{
+    
+        color:red;
+    }
+    
+    hr{
+        border-top: 1px solid #999999 !important;
+        height: 1px !important;
+        display: block !important;
+        font-size: 1em !important;
+        visibility: visible !important;
+      }
+    
+      .grad {
+        background: linear-gradient(to top, rgba(255,0,0,0), rgba(52, 152, 219,1));
+      }
+    
+      .grad ion-item {
+        background-color: transparent;
+      }
+    
+    
+      .timeText{
+        color:#2c3e50;
+        padding-top:10px;
+      }
+
+      .bg{
+        background-color:rgba(236, 240, 241,0.3);
+    }
+    .ima{
+        width: 200px;
+        height: 200px;
+        //background-image: "assets/imgs/c1.jpg";
+        background-color: rgba(52, 152, 219,0.7);
+        background-size: cover;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+       
+        border-radius: 100px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+       }
+       .ab{
+      
+        padding-top: 0px;
+        padding-bottom: 0px;
+        height:50px;
+       
+    
+       }
+
+      
+}

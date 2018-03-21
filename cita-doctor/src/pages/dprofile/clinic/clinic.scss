@@ -1,0 +1,36 @@
+page-clinic {
+
+
+    ion-footer button {
+      margin: 0 !important;
+    }
+    #myInput {
+      width: calc(100% - 10px);
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+  }
+  #my-map {
+    height: 40%;
+}
+  
+  .lolSelect{
+    color:#777777;
+    max-width: 100% !important;
+    
+  }
+  
+  .selectWrapper {
+    .select-icon {
+        visibility: hidden;
+    }
+     }
+  hr{
+    border-top: 1px solid #999999 !important;
+    height: 1px !important;
+    display: block !important;
+    font-size: 1em !important;
+    visibility: visible !important;
+  }
+  }
+  

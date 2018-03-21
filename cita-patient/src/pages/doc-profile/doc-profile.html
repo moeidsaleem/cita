@@ -1,0 +1,122 @@
+<ion-header>
+  <ion-navbar color="primary">
+   
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-avatar *ngIf="!doctor.fb_linked && !doctor.google_linked && doctor.profile_pic_url" item-start>
+        <img src="http://doctorsapp.itwaly.co.uk/Content/uploads/{{doctor.profile_pic_url}}">
+      </ion-avatar>
+      <ion-avatar *ngIf="doctor.fb_linked || doctor.google_linked " item-start>
+        <img src="{{doctor.profile_pic_url}}">
+      </ion-avatar>
+      <ion-avatar *ngIf="!doctor.profile_pic_url " item-start>
+        <img src="assets/imgs/noimage.png">
+      </ion-avatar>
+      <p class="username">{{doctor.doctor_name}}</p>
+      <p>{{doctor.specialization}}</p>
+      <rating [(ngModel)]="doctor.avg_review" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half"
+        starIconName="star" nullable="false"></rating>
+      ({{doctor.total_review}} reviews)
+    </ion-list-header>
+    <button ion-button round (click)="Review()" style="margin-left:34%;">{{ 'review' | translate }}</button>
+
+
+    <ion-slides (ionSlideDidChange)="slideChanged()" class="adate">
+      <ion-slide *ngFor="let s of schedule">
+        
+        <h3 style="text-transform:capitalize;"><span class="pull-left"  (click)="previousSlide()"> 
+           < &nbsp;&nbsp;&nbsp;</span>{{s.day}} , {{s.date}}
+           <span class="pull-right" (click)="nextSlide()">
+             &nbsp;&nbsp;&nbsp;> 
+            </span></h3>
+        
+      </ion-slide>
+
+    </ion-slides>
+
+
+   
+    <div padding>
+        <h3 *ngIf="initial_slots" style="text-align:center;">{{ 'no_slots' | translate }}</h3>
+        <h3 *ngIf="final_slots" style="text-align:center;">{{ 'no_slots' | translate }}</h3>
+        
+        <button *ngFor="let t of temp; let i = index" (click)="TimeSlot(t,i)" 
+      ion-button small class="slot" [ngStyle]="{'background-color': color[i]}">{{t}}</button>
+    </div>
+    <ion-item>
+      <button ion-button style="height:50px;font-size:1.2em;"
+       full color="danger" *ngIf="!initial_slots && !final_slots" (click)="Book()">{{ 'button_book_tomorrow' | translate }}
+      </button>
+    </ion-item>
+
+
+
+  </ion-list>
+  <div padding style="margin-top:-10%;">
+    <ion-segment [(ngModel)]="details">
+      <ion-segment-button value="doctor">
+        {{ 'doctor_details' | translate }}
+      </ion-segment-button>
+      <ion-segment-button value="reviews">
+        {{ 'revi' | translate }}
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="details">
+    <ion-list *ngSwitchCase="'reviews'">
+      <div style="text-align:center;" *ngIf="!reviews">{{ 'no_fav' | translate }}</div>
+      <div *ngFor="let r of reviews">
+        <ion-item no-lines>
+          <p item-start>
+            <b>{{r.patient_name}}</b>
+          </p>
+          <rating item-end [(ngModel)]="r.rate" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half"
+            starIconName="star" nullable="false"></rating>
+        </ion-item>
+
+        <ion-item>
+   
+          <p>{{r.message}}</p>
+        </ion-item>
+      </div>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'doctor'">
+      <ion-item no-lines>
+        <ion-label class="label"> {{doctor.specialization}} </ion-label>
+        <ion-icon name='medkit' color="primary" item-start></ion-icon>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label class="label"> {{ 'exam_fee' | translate }} {{doctor.examination_fee}} </ion-label>
+        <ion-icon name='cash' color="primary" item-start></ion-icon>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label class="label"> {{ 'waiting_time' | translate }}({{doctor.waiting_time}}) </ion-label>
+        <ion-icon name='clock' color="primary" item-start></ion-icon>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label class="label"> {{doctor.address}} </ion-label>
+        <ion-icon name='locate' color="primary" item-start></ion-icon>
+        <ion-icon name='navigate' *ngIf="lat != null && lng != null" (click)="OpenMap(lat,lng)" color="secondary" item-end></ion-icon>
+      </ion-item>
+
+      <ion-item no-lines>
+        <ion-label class="label"> {{ 'doctor_services' | translate }}</ion-label>
+        <ion-icon name='git-network' color="primary" item-start></ion-icon>
+
+      </ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12>
+            <button *ngFor="let s of service" ion-button small outline color="blue">{{s.service_name}}</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+  </div>
+
+</ion-content>

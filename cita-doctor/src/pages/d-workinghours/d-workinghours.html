@@ -1,0 +1,263 @@
+<ion-header>
+
+  <ion-navbar hideBackButton color="primary">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="onBackButton()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+
+
+    <ion-title>{{ 'working_hours' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg">
+  <hr>
+  <ion-row>
+    <ion-col>
+      <div>
+        <ion-icon name="calendar" color="primary"></ion-icon>
+
+
+      </div>
+    </ion-col>
+
+    <ion-col col-11>
+      {{ 'working_hours_clinic_working_hours' | translate }}
+
+    </ion-col>
+  </ion-row>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label> {{ 'saturday' | translate }}</ion-label>
+      <ion-toggle [(ngModel)]="SaturdayT" (ionChange)="click()"></ion-toggle>
+
+
+    </ion-item>
+    <div *ngIf="divvalue">
+
+      <ion-list>
+
+        <ion-row>
+
+          <ion-col>
+
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeStartsSat" (ionChange)="timeStartsclickSat(timeStartsSat)"></ion-datetime>
+
+          </ion-col>
+
+          <ion-col>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeEndsSat" (ionChange)="timeEndsclickSat(timeEndsSat)"></ion-datetime>
+
+          </ion-col>
+
+        </ion-row>
+
+
+      </ion-list>
+
+    </div>
+  </ion-list>
+  <ion-list>
+    <hr>
+
+    <ion-item>
+      <ion-label> {{ 'sunday' | translate }}</ion-label>
+      <ion-toggle [(ngModel)]="SundayT" (ionChange)="sundayclick()"></ion-toggle>
+
+
+    </ion-item>
+    <div *ngIf="divvaluesunday">
+
+      <ion-list>
+
+        <ion-row>
+
+          <ion-col>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeStartsSun" (ionChange)="timeStartsclickSun(timeStartsSun)"></ion-datetime>
+
+          </ion-col>
+          <ion-col>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeEndsSun" (ionChange)="timeEndsclickSun(timeEndsSun)"></ion-datetime>
+
+          </ion-col>
+
+        </ion-row>
+
+
+      </ion-list>
+
+    </div>
+  </ion-list>
+  <ion-list>
+    <hr>
+
+
+    <ion-item>
+      <ion-label> {{ 'monday' | translate }}</ion-label>
+      <ion-toggle [(ngModel)]="MondayT" (ionChange)="Mondayclick()"></ion-toggle>
+
+
+    </ion-item>
+    <div *ngIf="divvalueMonday">
+      <ion-list>
+
+        <ion-row>
+
+          <ion-col>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeStartsMon" (ionChange)="timeStartsclickMon(timeStartsMon)"></ion-datetime>
+
+          </ion-col>
+          <ion-col>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeEndsMon" (ionChange)="timeEndsclickMon(timeEndsMon)"></ion-datetime>
+
+          </ion-col>
+
+        </ion-row>
+
+
+      </ion-list>
+
+    </div>
+  </ion-list>
+  <ion-list>
+    <hr>
+
+    <ion-item>
+      <ion-label> {{ 'tuesday' | translate }}</ion-label>
+      <ion-toggle [(ngModel)]="TuesdayT" (ionChange)="Tuesdayclick()"></ion-toggle>
+
+
+    </ion-item>
+    <div *ngIf="divvalueTuesday">
+
+      <!--start-->
+
+      <ion-list>
+
+        <ion-row>
+
+          <ion-col>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeStartsTue" (ionChange)="timeStartsclickTue(timeStartsTue)"></ion-datetime>
+
+          </ion-col>
+
+          <ion-col>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeEndsTue" (ionChange)="timeEndsclickTue(timeEndsTue)"></ion-datetime>
+
+          </ion-col>
+
+        </ion-row>
+
+
+      </ion-list>
+
+    </div>
+  </ion-list>
+  <ion-list>
+    <hr>
+
+    <ion-item>
+      <ion-label> {{ 'wednesday' | translate }}</ion-label>
+      <ion-toggle [(ngModel)]="WednesdayT" (ionChange)="Wednesdayclick()"></ion-toggle>
+
+
+    </ion-item>
+    <div *ngIf="divvalueWednesday">
+
+      <ion-list>
+
+        <ion-row>
+
+          <ion-col>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeStartsWed" (ionChange)="timeStartsclickWed(timeStartsWed)"></ion-datetime>
+
+          </ion-col>
+          <ion-col>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeEndsWed" (ionChange)="timeEndsclickWed(timeEndsWed)"></ion-datetime>
+
+          </ion-col>
+
+        </ion-row>
+
+
+      </ion-list>
+
+    </div>
+  </ion-list>
+  <ion-list>
+    <hr>
+
+    <ion-item>
+      <ion-label> {{ 'thursday' | translate }}</ion-label>
+      <ion-toggle [(ngModel)]="ThursdayT" (ionChange)="Thursdayclick()"></ion-toggle>
+
+
+    </ion-item>
+    <div *ngIf="divvalueThursday">
+      <ion-list>
+
+        <ion-row>
+
+          <ion-col>
+
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeStartsThu" (ionChange)="timeStartsclickThu(timeStartsThu)"></ion-datetime>
+
+          </ion-col>
+
+          <ion-col>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeEndsThu" (ionChange)="timeEndsclickThu(timeEndsThu)"></ion-datetime>
+
+          </ion-col>
+
+        </ion-row>
+
+
+      </ion-list>
+
+    </div>
+  </ion-list>
+  <ion-list>
+    <hr>
+
+    <ion-item>
+      <ion-label> {{ 'friday' | translate }}</ion-label>
+      <ion-toggle [(ngModel)]="FridayT" (ionChange)="Fridayclick()"></ion-toggle>
+
+
+    </ion-item>
+    <div *ngIf="divvalueFriday">
+
+      <ion-list>
+
+        <ion-row>
+
+          <ion-col>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeStartsFri" (ionChange)="timeStartsclickFri(timeStartsFri)"></ion-datetime>
+
+          </ion-col>
+          <ion-col>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeEndsFri" (ionChange)="timeEndsclickFri(timeEndsFri)"></ion-datetime>
+
+          </ion-col>
+
+        </ion-row>
+
+
+      </ion-list>
+
+    </div>
+  </ion-list>
+
+
+</ion-content>
+
+<ion-footer>
+  <button ion-button full color="danger" (click)="UpdateSchedule()">{{ 'working_hours_update' | translate }}
+  </button>
+</ion-footer>

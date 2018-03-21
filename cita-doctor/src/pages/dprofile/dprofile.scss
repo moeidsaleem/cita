@@ -1,0 +1,132 @@
+page-dprofile {
+    ion-content {
+        background: linear-gradient(0deg, #eeeef1 0%, white 80%, white 100%);
+    }
+    button,
+    ion-button,
+    .button-md,
+    .button-ios {
+        text-transform: none !important;
+    }
+    p {
+        color: #444;
+    }
+    #my-map {
+        height: 50%;
+        width: 100%;
+    }
+    // Cover image
+    #profile-bg {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        margin-top: -16px;
+        height: 160px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: center;
+        background: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(52, 152, 219, 1));
+    }
+    // Profile content
+    #content {
+        position: relative;
+        margin-top: 150px;
+        padding-top: 200px;
+        text-align: center;
+    }
+    #profile-image {
+        display: block;
+        border-radius: 50%;
+        width: auto;
+        height: 100px;
+        margin: 0 auto 0;
+        box-shadow: 0px 11px 20px -3px rgba(142, 136, 146, 0.75);
+    }
+    #profile-info {
+        position: absolute;
+        top: -95px;
+        width: 100%;
+        z-index: 2;
+        text-align: center;
+    }
+    #profile-name {
+        color: #444;
+        font-size: 26px;
+    }
+    .profile-description {
+        font-size: 15px;
+        color: #888;
+    }
+    .follow-button {
+        text-transform: none;
+        border-radius: 3px !important;
+        ion-icon {
+            font-weight: bold;
+            padding-left: 5px;
+            font-size: 2.5rem;
+        }
+    }
+    // Following, Followers and all..
+    .profile-numbers {
+        p {
+            color: #777;
+            font-size: medium;
+            margin-bottom: 3px;
+        }
+        span {
+            font-weight: bold;
+            font-size: 2.4rem;
+            color: #999999;
+        }
+    }
+    hr {
+        border: 0;
+        height: 1px;
+        background: #444;
+        background: -webkit-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, rgb(188, 198, 214) 50%, hsla(0, 0%, 0%, 0) 100%);
+        margin-top: 15px;
+    }
+    // Posts feed
+    #posts {
+        text-align: justify;
+    }
+    ul {
+        padding: 0px;
+        &.rating li {
+            padding: 5px 1px !important;
+            background: none;
+            color: #ffb400;
+            ion-icon {
+                font-size: 15px;
+            }
+        }
+    }
+    .myInput {
+        width: calc(100% - 10px);
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+    }
+    .info {
+        float: left;
+    }
+    .text {
+        color: #777 !important;
+        border-radius: 3px !important;
+        padding: 5px !important;
+        margin-bottom: 5px !important;
+        text-align: justify;
+    }
+    hr {
+        border-top: 1px solid #999999 !important;
+        height: 1px !important;
+        display: block !important;
+        font-size: 1em !important;
+        visibility: visible !important;
+    }
+    #my-map {
+        height: 40%;
+    }
+ 
+}

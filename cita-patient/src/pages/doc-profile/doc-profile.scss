@@ -1,0 +1,28 @@
+page-doc-profile {
+    ul {
+        padding: 0px;
+        &.rating li {
+            padding: 5px 5px !important;
+            background: none;
+            color: #ffb400;
+            ion-icon {
+                font-size: 15px;
+            }
+        }
+    }
+    .slot {
+        background-color: rgba(52, 152, 219, 0.6);
+        color: white;
+    }
+    .adate {
+        background-color: #3092d3;
+        color: white;
+    }
+    .adate ion-icon {
+        color: white;
+    }
+    .adate p {
+        text-align: center;
+        color: #ffffff;
+    }
+}

@@ -1,0 +1,163 @@
+
+<ion-content padding class="transparent-header">
+       
+    <ion-header>
+        <ion-navbar color="primary">
+              
+            <ion-title>{{ 'profile' | translate }}</ion-title>
+        </ion-navbar>
+    </ion-header>
+    
+    <div id="profile-bg"></div>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+            <ion-refresher-content></ion-refresher-content>
+          </ion-refresher>
+ 
+    <div id="content">
+            
+    
+      
+    <h4 *ngIf="!doctors_data">{{ 'no_data' | translate }}</h4>
+        <div id="profile-info" padding>
+            <img id="profile-image" (click)="presentActionSheetUser()" src="{{pic}}">
+            
+            <h3 id="profile-name">{{doctors_data.doctor_name}}</h3>
+            <p>{{doctors_data.specialization}}</p>
+            <p class="profile-description">
+                <rating [(ngModel)]="doctors_data.avg_rating" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false"></rating>({{doctors_data.total_rating}}){{ 'reviews' | translate }}</p>
+            <!-- <button ion-button small color="danger">Publish Profile on App</button> -->
+            <button ion-button small color="danger" (click)="Appointments()">{{ 'appointments' | translate }}</button>
+
+
+        </div>
+        <hr/>
+
+
+        <div padding>
+            <ion-segment [(ngModel)]="justInfo">
+                <ion-segment-button value="doc">
+                    {{ 'doctor_info' | translate }}
+                </ion-segment-button>
+                <ion-segment-button value="clic">
+                    {{ 'clinic_info' | translate }}
+                </ion-segment-button>
+            </ion-segment>
+        </div>
+
+        <div [ngSwitch]="justInfo">
+
+
+            <ion-list *ngSwitchCase="'clic'">
+                <ion-list-header>
+                    <p class="info">  {{ 'profile_clinic_name_and_address' | translate }}</p>
+                    <ion-icon item-start name="git-network" color="primary"></ion-icon>
+                    <ion-icon item-end name="create" color="primary" (click)="openClinicModal(doctor_data)"></ion-icon>
+                </ion-list-header>
+                <h4 *ngIf="!doctor_data.clinic_name && !doctor_data.clinic_number">{{ 'no_data' | translate }}</h4>
+                <div>
+                    <p class="text">{{doctor_data.clinic_name}}</p>
+                    <hr>
+                    <p class="text">{{doctor_data.clinic_number}}</p>
+                    <hr>
+                </div>
+                
+                 <!-- <div #map id="map"></div>  -->
+
+                <ion-list-header>
+                    <p class="info">{{ 'profile_insurance_company' | translate }}</p>
+                    <ion-icon item-start name="hand" color="primary"></ion-icon>
+                    <ion-icon item-end name="create" color="primary" (click)="openInsuranceModal(insurance_companies)"></ion-icon>
+                </ion-list-header>
+               
+                <h4 *ngIf="!insurance_companies">{{ 'no_data' | translate }}</h4>
+                <div margin>
+                    <button *ngFor="let i of insurance_companies " ion-button small outline color="blue">{{i.company_name}}</button>
+
+                </div>
+
+                <ion-list-header>
+                    <p class="info">{{ 'profile_assistant_name_and_number' | translate }}</p>
+                    <ion-icon item-start name="person" color="primary"></ion-icon>
+                    <ion-icon item-end name="create" color="primary" (click)="openAssistantPhoneNameModal(doctor_data)"></ion-icon>
+                </ion-list-header>
+                <h4 *ngIf="!doctor_data.assistant_name && !doctor_data.assistant_number">{{ 'no_data' | translate }}</h4>
+                <div>
+                    <p class="text">{{doctor_data.assistant_name}}</p>
+                    <hr>
+                    <p class="text">{{doctor_data.assistant_number}}</p>
+                    <hr>
+                </div>
+                <ion-list-header>
+                    <p class="info">{{ 'profile_fee_and_address' | translate }}</p>
+                    <ion-icon item-start name="locate" color="primary"></ion-icon>
+                    <ion-icon item-end name="create" color="primary" (click)="openFeeAddress(doctor_data)"></ion-icon>
+                </ion-list-header>
+               
+                <p class="text">{{doctor_data.examination_fee}}</p>
+                <hr>
+                <p class="text">{{doctor_data.address}} </p>
+                <hr>
+
+               
+               
+
+            </ion-list>
+            
+
+            <!-- Clinic Segment ends Here -->
+
+            <!-- Doctor Segment Starts Here -->
+            <ion-list *ngSwitchCase="'doc'">
+                <ion-list-header>
+                    <p class="info"> {{ 'profile_about_the_doctor' | translate }}</p>
+                    <ion-icon item-start name="git-network" color="primary"></ion-icon>
+                    <ion-icon item-end name="create" color="primary" (click)="openHintModal(doctors_data.professioanl_statement)"></ion-icon>
+                </ion-list-header>
+                <div>
+                    <h4 *ngIf="!doctors_data">{{ 'no_data' | translate }}</h4>
+                    <p class="text">
+                        {{doctors_data.professioanl_statement}}
+                    </p>
+
+                </div>
+                <ion-list-header>
+                       
+                    <ion-icon item-start name="git-network" color="primary"></ion-icon>
+                    <h4 *ngIf="!doctors_data">{{ 'no_data' | translate }}</h4>
+                    <p class="info">{{doctors_data.specialization_name}}</p>
+                    <ion-icon item-start name="browser" color="primary"></ion-icon>
+                    <ion-icon item-end name="create" color="primary" (click)="openSubSpecializationModel(doctors_data.specialization_id)"></ion-icon>
+                </ion-list-header>
+                <h4 *ngIf="!sub_specializations">{{ 'no_data' | translate }}</h4>
+                <div margin>
+                    <button *ngFor="let s of sub_specializations" ion-button small outline color="blue">{{s.sub_specialization_name}}</button>
+
+                </div>
+
+                <ion-list-header>
+                    <p class="info"> {{ 'profile_services' | translate }}</p>
+                    <ion-icon item-start name="medkit" color="primary"></ion-icon>
+                    <ion-icon item-end name="create" color="primary" (click)="openServicesModel(doctor_data)"></ion-icon>
+                </ion-list-header>
+                <h4 *ngIf="!services">{{ 'no_data' | translate }}</h4>
+                <div margin>
+                    <button *ngFor="let s of services" ion-button small outline color="blue">{{s.service_name}}</button>
+
+                </div>
+
+
+
+            </ion-list>
+
+
+        </div>
+        
+    </div>
+  
+
+    <div #map id="my-map"></div>  
+  
+   
+
+   
+</ion-content>

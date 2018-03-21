@@ -1,0 +1,31 @@
+<ion-content style="background-color:rgba(41, 128, 185,0.5);" padding class="transparent-header">
+    <ion-header>
+
+    </ion-header>
+    <img class="logo" (click)="MainPage()" src="assets/imgs/logowa.png" />
+    <form (ngSubmit)="Login(usercreds)" #registerForm="ngForm">
+        <div padding>
+
+            <ion-item>
+                <ion-input [(ngModel)]="usercreds.email" id="email" placeholder="Email" name="email" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input [(ngModel)]="usercreds.password" id="password" placeholder="Password" name="password" type="password"></ion-input>
+            </ion-item>
+            <button ion-button block outline [disabled]="!registerForm.form.valid" color="light" class="login-button">Login</button>
+
+        </div>
+    </form>
+    <div class="strike">
+        <span>OR</span>
+    </div>
+    <button ion-button block clear color="light" (click)="LoginFb()" class="login-button"><ion-icon name="logo-facebook"></ion-icon> Login with Facebook</button>
+    <button ion-button block clear color="light" (click)="LoginGmail()" class="login-button"><ion-icon name="logo-google"></ion-icon> Login with Google</button>
+</ion-content>
+<ion-footer>
+    <ion-toolbar class="footer">
+        <div>
+            <span (click)="SignUp()">Don't have an account? <strong>Sign up here</strong>.</span>
+        </div>
+    </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,84 @@
+<ion-content style="background-color:rgba(41, 128, 185,0.5);" padding class="transparent-header">
+  <ion-header>
+    <ion-navbar style="margin-top:10px;">
+    </ion-navbar>
+  </ion-header>
+  <img class="logo" src="assets/imgs/logowa.png" />
+  <div padding>
+
+
+    <ion-item>
+      <ion-icon item-start name="person"></ion-icon>
+      <ion-input placeholder="First Name"  [(ngModel)]="first_name" required id="first_name" type="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon item-start name="person"></ion-icon>
+      <ion-input placeholder="Last Name"  [(ngModel)]="last_name" required id="last_name" type="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon item-start name="mail"></ion-icon>
+      <ion-input placeholder="Email address"  [(ngModel)]="email" required id="email" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon item-start name="lock"></ion-icon>
+      <ion-input placeholder="Password"  [(ngModel)]="password" required id="password" type="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon item-start name="call"></ion-icon>
+      <ion-input placeholder="Phone (+92) 313 5270818" required  [(ngModel)]="phone" id="phone" type="text"></ion-input>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-icon item-start name="home"></ion-icon>
+      <ion-input placeholder="Address"  [(ngModel)]="street_address" required id="street_address" type="text"></ion-input>
+
+    </ion-item>
+
+
+
+    <ion-item>
+      <ion-icon item-start name="logo-chrome"></ion-icon>
+      <ion-label color="lightwa">City</ion-label>
+      <ion-select  [(ngModel)]="city_id" (ionChange)="CityId(city_id)"  required class="lolSelect selectWrapper">       
+        <ion-option *ngFor="let c of cities" value="{{c.city_id}}">{{c.city_name}}</ion-option>
+      </ion-select>
+      <ion-icon item-end name="arrow-down"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="person"></ion-icon>
+      <ion-label color="lightwa">Gender</ion-label>
+      <ion-select  [(ngModel)]="gender"  required class="lolSelect selectWrapper ">
+        <ion-option value="male">Male</ion-option>
+        <ion-option value="female">Female</ion-option>
+        <ion-option value="other">Other</ion-option>
+      </ion-select>
+      <ion-icon item-end name="arrow-down"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon item-start name="phone-portrait"></ion-icon>
+      <ion-label color="lightwa">Operating System</ion-label>
+      <ion-select  [(ngModel)]="mobile_os" required class="lolSelect selectWrapper ">
+        <ion-option value="android">Android</ion-option>
+        <ion-option value="iphone">Iphone</ion-option>
+        <ion-option value="blackberry">BlackBerry</ion-option>
+        <ion-option value="windows">Windows</ion-option>
+      </ion-select>
+      <ion-icon item-end name="arrow-down"></ion-icon>
+    </ion-item>
+  
+
+    <button ion-button block outline color="light" (click)="signup()" class="login-button">Sign up</button>
+
+    <div class="strike">
+      <span>OR</span>
+    </div>
+    <!-- <button ion-button block clear color="light" class="login-button">
+      <ion-icon name="logo-facebook"></ion-icon> Sign up with Facebook</button> -->
+
+  </div>

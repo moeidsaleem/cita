@@ -1,0 +1,102 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+
+        <ion-title>{{ 'schedule' | translate }}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div padding>
+        <ion-segment [(ngModel)]="Schedule">
+            <ion-segment-button value="Summary">
+                {{ 'schedule_summary' | translate }}
+            </ion-segment-button>
+            <ion-segment-button value="Management">
+                {{ 'schedule_management' | translate }}
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+    
+    <div [ngSwitch]="Schedule">
+           
+        <ion-list *ngSwitchCase="'Management'">
+               
+            <ion-card class="grad">
+                <ion-card-content>
+                    <ion-item no-lines>
+                        <h2 style="color:#ffffff;"> {{ 'schedule_confirm_availability' | translate }}</h2>
+                        <ion-icon item-start name="calendar" color="lightwa"></ion-icon>
+                        <ion-icon item-end name="information-circle" color="lightwa"></ion-icon>
+                    </ion-item>
+
+                    <hr>
+                    <ion-item no-lines>
+                        <ion-label> {{ 'schedule_this_week' | translate }}</ion-label>
+                        <ion-toggle [(ngModel)]="isToggledC" (ionChange)="notify()"></ion-toggle>
+                    </ion-item>
+
+                    <ion-item no-lines>
+                        <ion-label>{{ 'schedule_next_week' | translate }}</ion-label>
+                        <ion-toggle [(ngModel)]="isToggledN" (ionChange)="notifyN()"></ion-toggle>
+                    </ion-item>
+
+                </ion-card-content>
+            </ion-card>
+            <ion-card>
+
+                <ion-list-header>
+                    <ion-icon name="clock" color="primary"></ion-icon>
+
+
+                    {{ 'schedule_clinic_working_hours' | translate }}
+                    <ion-icon item-end name="create" (click)="OpenWorkingHoursPage()" color="primary"></ion-icon>
+                </ion-list-header>
+                <br>
+
+                <table class="table" align="center">
+
+                    <tr *ngFor="let a of DoctorSchedules">
+                        <td style="text-transform: capitalize;">{{a.day}}</td>
+                        <td>{{a.time_start}} - {{a.time_end}}</td>
+                    </tr>
+
+                </table>
+                <br>
+                <br>
+
+            </ion-card>
+
+
+        </ion-list>
+        <h3 *ngIf="no_appointments">No Appointments Found</h3>
+        
+        <ion-list *ngSwitchCase="'Summary'">
+               
+            <ion-card *ngFor="let a of Appointments" class="grad">
+                
+                <ion-card-content>
+                    <ion-item no-lines>
+                        <ion-grid>
+                            <ion-row class="textClass">
+                                <ion-col col-5>
+                                    <small class="datewa">{{a.day}}
+                                        <br> {{a.date}}</small>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <small class="appointwa">{{a.count}}
+                                        <br>Bookings</small>
+                                </ion-col>
+                                <ion-col col-2></ion-col>
+                            </ion-row>
+                        </ion-grid>
+                        <ion-icon item-end name="calendar" color="primary" (click)="openScheduleModal(a)"></ion-icon>
+                    </ion-item>
+                </ion-card-content>
+            </ion-card>
+
+        </ion-list>
+    </div>
+</ion-content>

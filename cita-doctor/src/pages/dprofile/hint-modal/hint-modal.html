@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar hideBackButton color="primary">
+     
+        <ion-buttons left>
+            <button ion-button icon-only (click)="onBackButton()" >
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+
+ 
+        <ion-title center style="font-size:4px;">{{ 'about_the_doctor' | translate }}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+
+
+        <ion-list-header>
+            <p class="info">{{ 'about_the_doctor_heading' | translate }}</p>
+        </ion-list-header>
+
+
+
+        <ion-item no-lines>
+
+            <ion-textarea end type="text" required rows="7" [(ngModel)]="description" placeholder="{{ 'about_description' | translate }}"></ion-textarea>
+        </ion-item>
+        <hr>
+
+    </ion-list>
+</ion-content>
+<ion-footer>
+    <button ion-button full color="danger" (click)="UpdateDescription()">{{ 'working_hours_update' | translate }}
+  </button>
+</ion-footer>

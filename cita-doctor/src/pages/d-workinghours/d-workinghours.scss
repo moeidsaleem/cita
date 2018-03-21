@@ -1,0 +1,13 @@
+page-d-workinghours {
+    // .bg{
+    //     background-color:rgba(236, 240, 241,0.3);
+    // }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background: #444;
+        background: -webkit-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, rgb(188, 198, 214) 50%, hsla(0, 0%, 0%, 0) 100%);
+        margin-top: 15px;
+    }
+}

@@ -1,0 +1,31 @@
+page-search-result{
+  .username {
+    font-size: 1.3em;
+  }
+  .label {
+    color: #7f7f7f;
+  }
+  
+  hr {
+    border-top: 2px solid grey !important;
+    height: 1px !important;
+    display: block !important;
+    font-size: 2em !important;
+    visibility: visible !important;
+  }
+
+  ul {
+    padding: 0px;
+   
+    &.rating li {
+      padding: 5px 1px !important;
+      background: none;
+      color: #ffb400;
+   
+      ion-icon {
+        font-size: 15px;
+      }
+    }
+  }
+  
+}

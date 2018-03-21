@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar hideBackButton color="primary">
+        <ion-buttons left>
+            <button ion-button icon-only (click)="onBackButton()" >
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title center style="font-size:4px;">{{ 'assitant_phone_and_number' | translate }}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+
+
+        <ion-list-header>
+            <p class="info">{{ 'assitant_phone_and_number_name' | translate }}</p>
+        </ion-list-header>
+
+        <ion-item no-lines>
+            <ion-input end type="text" required [(ngModel)]="assistant_name" placeholder="{{ 'assistant_name' | translate }}"></ion-input>
+        </ion-item>
+        <hr>
+        <ion-list-header>
+            <p class="info">{{ 'assitant_phone_and_number_phone' | translate }}</p>
+        </ion-list-header>
+
+        <ion-item no-lines>
+            <ion-input end type="number" required [(ngModel)]="assistant_phone" placeholder="{{ 'assistant_phone' | translate }}"></ion-input>
+        </ion-item>
+
+        <hr>
+
+    </ion-list>
+</ion-content>
+<ion-footer>
+    <button ion-button full color="danger" (click)="UpdatePhoneName()">{{ 'assitant_phone_and_number_update' | translate }}
+</button>
+</ion-footer>

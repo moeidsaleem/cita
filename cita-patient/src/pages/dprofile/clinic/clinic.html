@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-icon start name="close-circle" (click)="dismiss()" style="margin-left:5px;color:#ffffff;"></ion-icon>
+    <ion-title center style="font-size:4px;">Clinic Information</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <!--About Clinic Name and Number Start 
+
+      <ion-list-header >
+          <p class="info">Clinic Name in English</p>
+        </ion-list-header>
+        <ion-item no-lines >
+          <textarea #myInput id="myInput" placeholder="details about doc here" rows="1" maxLength="500" (keyup)="resize()" [(ngModel)]="myStuff"></textarea>
+        </ion-item>
+        <ion-list-header>
+            <p class="info">Clinic Name in Arabic</p>
+          </ion-list-header>
+        <ion-item no-lines>
+          <textarea #myInput id="myInput" placeholder="إنتا معلم و حنا منك نتعلم" rows="1" maxLength="500" (keyup)="resize()" [(ngModel)]="myStuff"></textarea>
+        </ion-item> 
+        <ion-list-header>
+            <p class="info">Clinic Number</p>
+          </ion-list-header>
+
+        <ion-item no-lines>
+          <ion-input end type="text" placeholder="112233"></ion-input>
+        </ion-item> 
+
+        <hr>
+      -->
+    <!--About Clinic  End -->
+
+    <!--Clinic Fee & Address Start 
+    
+    <ion-list-header>
+        <p class="info">Fee</p>
+      </ion-list-header>
+
+    <ion-item no-lines>
+      <ion-input end type="text" placeholder="420 rupeye"></ion-input>
+    </ion-item> 
+
+    <ion-list-header>
+        <p class="info">Addresss</p>
+      </ion-list-header>
+
+    <ion-item no-lines>
+      <ion-input end type="text" placeholder="Commercial Market Pindiiiiiiiiiiii"></ion-input>
+    </ion-item> 
+
+    <hr>
+    -->
+    <!--Clinic Fee & Address End -->
+
+    <!--Clinic insurrance Start 
+    
+        <ion-list-header>
+          <p class="info">Insurance Companies</p>
+          <ion-icon item-start name="logo-tux"></ion-icon>
+        </ion-list-header>
+        <ion-item>
+          <ion-icon item-start name="medkit"></ion-icon>
+          <ion-label>Linked Insurance Companies</ion-label>
+          <ion-select class="lolSelect" multiple="true">
+            <ion-option value="default">LPC</ion-option>
+            <ion-option value="a">ABC</ion-option>
+            <ion-option value="b">XYZ</ion-option>
+          </ion-select>
+        </ion-item>
+      -->
+    <!--Clinic insurrance Start End -->
+
+
+    <!--Clinic Fee & Address Start -->
+    
+    <ion-list-header>
+        <p class="info">Assistant Name</p>
+      </ion-list-header>
+
+    <ion-item no-lines>
+      <ion-input end type="text" placeholder="Assitant name"></ion-input>
+    </ion-item> 
+    <hr>
+    <ion-list-header>
+        <p class="info">Number</p>
+      </ion-list-header>
+
+    <ion-item no-lines>
+      <ion-input end type="text" placeholder="0900 78601"></ion-input>
+    </ion-item> 
+
+    <hr>
+    
+    <!--Clinic Fee & Address End -->
+
+    
+
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <button ion-button full color="danger" (click)="dismiss()">Update
+  </button>
+</ion-footer>

@@ -1,0 +1,56 @@
+<ion-content style="background-color:rgba(41, 128, 185,0.5);" padding class="transparent-header">
+  <ion-header>
+    <ion-navbar style="margin-top:10px;">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-navbar>
+  </ion-header>
+  <img class="logo" src="assets/imgs/logowa.png" />
+  <div padding>
+    <ion-item>
+      <ion-icon item-start name="browsers"></ion-icon>
+      <ion-label color="black">{{ 'all_specs' | translate }}</ion-label>
+      <ion-select class="lolSelect selectWrapper" [(ngModel)]="speciality_id" (ionChange)="SpecialityId(speciality_id)">
+        <ion-option *ngFor="let s of specialities" value="{{s.specialization_id}}">{{s.specialization_title}}</ion-option>
+      </ion-select>
+      <ion-icon item-end name="arrow-down"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon item-start name="logo-chrome"></ion-icon>
+      <ion-label color="black">{{ 'all_cities' | translate }}</ion-label>
+      <ion-select class="lolSelect selectWrapper" [(ngModel)]="city_id" (ionChange)="CityId(city_id)">
+        <ion-option *ngFor="let c of cities" value="{{c.city_id}}">{{c.city_name}}</ion-option>
+      </ion-select>
+      <ion-icon item-end name="arrow-down"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon item-start name="compass"></ion-icon>
+      <ion-label color="black">{{ 'all_areas' | translate }}</ion-label>
+      <ion-select class="lolSelect selectWrapper" [(ngModel)]="area_id" (ionChange)="AreaId(area_id)">
+        <ion-option  *ngFor="let a of areas"  value="{{a.area_id}}">{{a.area_name}}</ion-option>
+      </ion-select>
+      <ion-icon item-end name="arrow-down"></ion-icon>
+    </ion-item>
+
+
+
+    <ion-item>
+      <ion-icon item-start name="hand"></ion-icon>
+      <ion-label color="black">{{ 'all_insurance' | translate }}</ion-label>
+      <ion-select class="lolSelect selectWrapper" [(ngModel)]="insurance_id" (ionChange)="InsuranceId(insurance_id)">
+        <ion-option *ngFor="let i of insurance_company" value="{{i.company_id}}">{{i.company_name}}</ion-option>
+      </ion-select>
+      <ion-icon item-end name="arrow-down"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon item-start name="medkit"></ion-icon>
+      <ion-input [(ngModel)]="doctorname" name="doctorname" id="doctorname" placeholder="{{ 'doctor_name' | translate }}"></ion-input>
+    </ion-item>
+    
+
+    <button ion-button block outline color="light" class="login-button" (click)="searcResultPage()">{{ 'button_search_for_doctor' | translate }}</button>
+  </div>

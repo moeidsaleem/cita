@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>{{ 'appointments' | translate }}</ion-title>
+ 
+    </ion-navbar>
+  </ion-header>
+  
+  
+  
+  <ion-content padding style="background-color:#ecf0f1;">
+      <ion-searchbar [(ngModel)]="searchValue" (ionChange)="Search(searchValue)" style="background-color:transparent;border:none;"></ion-searchbar>
+      <h4 *ngIf="!doctorPatients">No Data Found</h4>
+    <ion-card class="grad" *ngFor="let d of doctorPatients">
+      <ion-card-content>
+        <ion-card-title>
+          <span style="color:#fff;">{{d.patient_name}} </span>
+        </ion-card-title>
+        <p *ngFor="let i of d.insurance">
+         {{i.company_name}}
+        </p>
+     
+  
+       
+        <button ion-button clear icon-left>
+            <ion-icon name='call' (click)="OpenPhoneApp(a.phone)" is-active="false"></ion-icon>
+        </button>
+        <button ion-button color="secondary" clear icon-left>
+            <ion-icon name='text' (click)="OpenMessageApp(a.phone)" is-active="false"></ion-icon>
+        </button>
+
+        <ion-item no-lines>
+          <ion-label class="label" *ngIf="d.status == 'pending'" style="color:dodgerblue;">Pending </ion-label>
+          <ion-label class="label" *ngIf="d.status == 'active'" style="color:green;">Active</ion-label>
+          <ion-label class="label" style="color:red;" *ngIf="d.status == 'canceled'">Cancelled </ion-label>
+       </ion-item>
+
+      <div padding>
+          <button ion-button small color="success" *ngIf="d.status == 'pending'" (click)="Approve(d.appointment_id,d.patient_id)">Approve</button>
+          <button ion-button small color="danger" *ngIf="d.status == 'pending'" (click)="Cancel(d.appointment_id,d.patient_id)">Cancel</button>
+
+      </div>
+
+      </ion-card-content>
+    </ion-card>
+  
+
+
+  
+  </ion-content>

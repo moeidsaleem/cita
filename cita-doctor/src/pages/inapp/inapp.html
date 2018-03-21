@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        In-App Purchases
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+   
+  <ion-content padding>
+   
+
+    
+   
+    <ion-card *ngFor="let product of products">
+      <ion-card-header>{{ product.title }}</ion-card-header>
+      <ion-card-content>
+        {{ product.description }}
+      </ion-card-content>
+      <ion-row>
+        <ion-col>
+          <button ion-button block (click)="buy(product.productId)">
+            Buy now - {{ product.price }}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    
+   
+  
+   
+  </ion-content>

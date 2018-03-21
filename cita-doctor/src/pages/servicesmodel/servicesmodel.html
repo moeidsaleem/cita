@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar hideBackButton color="primary">
+        <ion-buttons left>
+            <button ion-button icon-only (click)="onBackButton()" >
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title center style="font-size:4px;">{{ 'services' | translate }}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+
+
+        <ion-list-header>
+            <p class="info">{{ 'services_heading' | translate }}</p>
+        </ion-list-header>
+        <h4 *ngIf="!Services">{{ 'no_data' | translate }}</h4>
+        <div margin *ngFor="let s of Services; let i = index">
+            <button class="slot" *ngIf="s.status===true" [ngStyle]="{'background-color': color[i]}" (click)="TimeSlot(s,i)" ion-button
+                small outline>{{s.service_name}}
+                <ion-icon name="checkmark"></ion-icon>
+            </button>
+            <button class="slot-false" *ngIf="s.status===false" (click)="TimeSlot(s,i)" ion-button small outline>{{s.service_name}}
+                <ion-icon name="add"></ion-icon>
+            </button>
+
+        </div>
+
+
+    </ion-list>
+</ion-content>
+<ion-footer>
+    <button ion-button full color="danger" (click)="UpdateServices()">{{ 'services_update' | translate }}
+    </button>
+</ion-footer>

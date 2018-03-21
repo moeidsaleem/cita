@@ -1,0 +1,73 @@
+<ion-content padding class="transparent-header">
+    <ion-header no-lines>
+      <ion-navbar style="margin-top:20px;" color="primary">
+          <ion-title style="color:#ffffff;">Sign Up</ion-title>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+          
+        </button>
+      </ion-navbar>
+    </ion-header>
+    <img class="logo" src="assets/imgs/logowa.png" />
+    <div padding>
+  
+  
+        <ion-item>
+            <ion-icon item-start name="person"></ion-icon>
+            <ion-input placeholder="FullName Here" type="name"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+        <ion-icon item-start name="mail"></ion-icon>
+        <ion-input placeholder="Email address" type="email"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-icon item-start name="lock"></ion-icon>
+        <ion-input placeholder="Password" type="password"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-icon item-start name="call"></ion-icon>
+        <ion-input placeholder="(+92) 313 5270818" type="text"></ion-input>
+  
+      </ion-item>
+  
+      <ion-item>
+        <ion-icon item-start name="calendar"></ion-icon>
+        <ion-datetime placeholder="01-03-1994" style="color:#ffffff;" displayFormat="MM/DD/YYYY"></ion-datetime>
+        <ion-icon item-end name="arrow-down"></ion-icon>
+      </ion-item>
+  
+  
+      <ion-item>
+        <ion-icon item-start name="switch"></ion-icon>
+        <ion-label color="lightwa">Language</ion-label>
+        <ion-select class="lolSelect selectWrapper ">
+          <ion-option value="default">English</ion-option>
+          <ion-option value="a">English</ion-option>
+          <ion-option value="b">Arabic</ion-option>
+        </ion-select>
+        <ion-icon item-end name="arrow-down"></ion-icon>
+      </ion-item>
+  
+      <ion-item>
+          <ion-icon item-start name="people"></ion-icon>
+          <ion-label color="lightwa">Gender</ion-label>
+          <ion-select class="lolSelect selectWrapper ">
+            <ion-option value="default">Male</ion-option>
+            <ion-option value="f">Female</ion-option>
+          </ion-select>
+          <ion-icon item-end name="arrow-down"></ion-icon>
+        </ion-item>
+    
+  
+     
+  
+      <button ion-button block outline color="light" class="login-button" (click)="searcResultPage()">Sign up</button>
+      <div class="strike">
+          <span>OR</span>
+        </div>
+        <button ion-button block clear  color="light" class="login-button"><ion-icon name="logo-facebook"></ion-icon> Sign up with Facebook</button>
+      
+    </div>

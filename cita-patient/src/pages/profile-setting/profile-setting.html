@@ -1,0 +1,78 @@
+<ion-content style="background-color:rgba(41, 128, 185,0.5);" padding class="transparent-header">
+  <ion-header no-lines>
+    <ion-navbar style="margin-top:20px;" color="primary">
+      <!-- <ion-title style="color:#ffffff;">Profile Settings</ion-title> -->
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+
+      </button>
+    </ion-navbar>
+  </ion-header>
+  <img class="logo" src="assets/imgs/logowa.png" />
+  <div padding>
+
+
+    <ion-item>
+      <ion-icon item-start name="person"></ion-icon>
+      <ion-input placeholder="First Name" [(ngModel)]="first_name" required id="first_name" type="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon item-start name="person"></ion-icon>
+      <ion-input placeholder="Last Name" [(ngModel)]="last_name" required id="last_name" type="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon item-start name="call"></ion-icon>
+      <ion-input placeholder="Phone (+92) 313 5270818" required [(ngModel)]="phone" id="phone" type="text"></ion-input>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-icon item-start name="home"></ion-icon>
+      <ion-input placeholder="{{ 'address' | translate }}" [(ngModel)]="street_address" required id="street_address" type="text"></ion-input>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-icon item-start name="logo-chrome"></ion-icon>
+      <ion-label color="lightwa">{{ 'city' | translate }}</ion-label>
+      <ion-select [(ngModel)]="city_id" (ionChange)="CityId(city_id)" required class="lolSelect selectWrapper">
+        <ion-option *ngFor="let c of cities" value="{{c.city_id}}">{{c.city_name}}</ion-option>
+      </ion-select>
+      <ion-icon item-end name="arrow-down"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="person"></ion-icon>
+      <ion-label color="lightwa">{{ 'gender' | translate }}</ion-label>
+      <ion-select [(ngModel)]="gender" required class="lolSelect selectWrapper ">
+        <ion-option value="male">Male</ion-option>
+        <ion-option value="female">Female</ion-option>
+        <ion-option value="other">Other</ion-option>
+      </ion-select>
+      <ion-icon item-end name="arrow-down"></ion-icon>
+    </ion-item>
+
+    <!-- <ion-item>
+      <ion-icon item-start name="phone-portrait"></ion-icon>
+      <ion-label color="lightwa">Operating System</ion-label>
+      <ion-select [(ngModel)]="mobile_os" required class="lolSelect selectWrapper ">
+        <ion-option value="android">Android</ion-option>
+        <ion-option value="iphone">Iphone</ion-option>
+        <ion-option value="blackberry">BlackBerry</ion-option>
+        <ion-option value="windows">Windows</ion-option>
+      </ion-select>
+      <ion-icon item-end name="arrow-down"></ion-icon>
+    </ion-item> -->
+    <!-- <ion-avatar item-start>
+      <img src="{{pic}}" style="height:40%;width:40%;margin:auto;">
+    </ion-avatar>
+   
+    <button ion-button type="button" color="light" outline block round class="round_button" (click)="presentActionSheetUser()">
+      Select Picture
+    </button> -->
+    <br>
+
+    <button ion-button block outline color="light" (click)="UpdateProfile()" class="login-button">{{ 'update' | translate }}</button>
+
+  </div>

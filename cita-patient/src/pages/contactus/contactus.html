@@ -1,0 +1,41 @@
+<ion-content style="background-color:rgba(41, 128, 185,0.5);" padding class="transparent-header">
+  <ion-header>
+    <ion-navbar style="margin-top:20px;" color="primary">
+      <!-- <ion-title style="color:#ffffff;">Contact us</ion-title> -->
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+
+      </button>
+    </ion-navbar>
+  </ion-header>
+  <img class="logo" src="assets/imgs/logowa.png" />
+  <div padding>
+
+
+
+
+    <ion-item>
+      <ion-icon item-start name="mail"></ion-icon>
+      <ion-input placeholder="Email address" [(ngModel)]="contact.email" type="email"></ion-input>
+    </ion-item>
+
+
+
+    <ion-item>
+      <ion-icon item-start name="call"></ion-icon>
+      <ion-input placeholder="(+92) 313 5270818" [(ngModel)]="contact.phone" type="text"></ion-input>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-icon item-start name="at"></ion-icon>
+      <textarea #myInput id="myInput" [(ngModel)]="contact.message" placeholder="Enter Message" rows="1" maxLength="500" (keyup)="resize()" [(ngModel)]="myStuff"></textarea>
+
+    </ion-item>
+    <button ion-button block outline color="light" [disabled]="contact.email == '' || contact.phone == ''  || contact.message == ''" class="login-button" (click)="presentToast()">Send</button>
+
+
+    <div class="strike">
+        <span>or Call us at</span>
+      <p class="textclass">0900 78601</p></div>
+  </div>

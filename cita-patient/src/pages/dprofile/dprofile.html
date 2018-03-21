@@ -1,0 +1,150 @@
+<ion-content padding class="transparent-header">
+  <ion-header>
+    <ion-navbar color="primary">
+      <ion-buttons end>
+        <button ion-button icon-only (click)="openHintModal()">
+          <ion-icon name="create" style="margin-right:5px;color:#ffffff;"></ion-icon>
+        </button>
+      </ion-buttons>
+
+
+      <ion-title>Profile</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <div id="profile-bg"></div>
+  <div id="content">
+    <div id="profile-info" padding>
+      <img id="profile-image" src="assets/imgs/dp.png">
+      <h3 id="profile-name">Dr Sahab</h3>
+      <p>Main Specially</p>
+      <p class="profile-description">
+        <rating [(ngModel)]="rate" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star"
+          nullable="false"></rating>(100 Reviews)</p>
+      <button ion-button small color="danger">Publish Profile on App</button>
+
+    </div>
+    <hr/>
+
+
+    <div padding>
+      <ion-segment [(ngModel)]="justInfo">
+        <ion-segment-button value="doc">
+          Doctor Info
+        </ion-segment-button>
+        <ion-segment-button value="clic">
+          Clinic Info
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <div [ngSwitch]="justInfo">
+
+      <!-- Clinic Segment Starts Here -->
+
+      <ion-list *ngSwitchCase="'clic'">
+        <ion-list-header>
+          <p class="info">Clinic Name and Number</p>
+          <ion-icon item-start name="git-network" color="primary"></ion-icon>
+          <ion-icon item-end name="create" color="primary" (click)="openClinicModal()"></ion-icon>
+        </ion-list-header>
+        <div>
+          <p class="text">Name:</p>
+          <hr>
+          <p class="text">Number:</p>
+          <hr>
+        </div>
+        <ion-list-header>
+          <p class="info">Fee & Address</p>
+          <ion-icon item-start name="locate" color="primary"></ion-icon>
+          <ion-icon item-end name="create" color="primary"></ion-icon>
+        </ion-list-header>
+        <p class="text">Fee:</p>
+        <hr>
+        <p class="text">Address: </p>
+        <hr>
+
+        <ion-list-header>
+            <p class="info">Insurance Company</p>
+            <ion-icon item-start name="hand" color="primary"></ion-icon>
+            <ion-icon item-end name="create"  color="primary"></ion-icon>
+          </ion-list-header>
+  
+          <div margin>
+            <button ion-button small outline color="blue">abc</button>
+            <button ion-button small outline color="blue">xyz</button>
+            <button ion-button small outline color="blue">lpc</button>
+          </div>
+
+          <ion-list-header>
+              <p class="info">Assistant Name and Number</p>
+              <ion-icon item-start name="person" color="primary"></ion-icon>
+              <ion-icon item-end name="create" color="primary"></ion-icon>
+            </ion-list-header>
+            <div>
+              <p class="text">Name:</p>
+              <hr>
+              <p class="text">Number:</p>
+              <hr>
+            </div>
+
+      </ion-list>
+
+      <!-- Clinic Segment ends Here -->
+
+      <!-- Doctor Segment Starts Here -->
+      <ion-list *ngSwitchCase="'doc'">
+        <ion-list-header>
+          <p class="info">About the Doctor</p>
+          <ion-icon item-start name="git-network" color="primary"></ion-icon>
+          <ion-icon item-end name="create" color="primary" (click)="openHintModal()"></ion-icon>
+        </ion-list-header>
+        <div>
+
+          <p class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          </p>
+
+        </div>
+        <ion-list-header>
+          <p class="info">Medical Sub-Specialty</p>
+          <ion-icon item-start name="browser" color="primary"></ion-icon>
+          <ion-icon item-end name="create" color="primary" (click)="openHintModal()"></ion-icon>
+        </ion-list-header>
+
+        <div margin>
+          <button ion-button small outline color="blue">Heart</button>
+          <button ion-button small outline color="blue">RBCs</button>
+          <button ion-button small outline color="blue">WBCs</button>
+          <button ion-button small outline color="blue">Khabbay</button>
+          <button ion-button small outline color="blue">Shajjay</button>
+          <button ion-button small outline color="blue">WBCs</button>
+          <button ion-button small outline color="blue">Khabbay</button>
+          <button ion-button small outline color="blue">Shajjay</button>
+        </div>
+
+        <ion-list-header>
+          <p class="info">Services</p>
+          <ion-icon item-start name="medkit" color="primary"></ion-icon>
+          <ion-icon item-end name="create" color="primary" (click)="openHintModal()"></ion-icon>
+        </ion-list-header>
+
+        <div margin>
+          <button ion-button small outline color="blue">Heart</button>
+          <button ion-button small outline color="blue">RBCs</button>
+          <button ion-button small outline color="blue">WBCs</button>
+          <button ion-button small outline color="blue">Khabbay</button>
+          <button ion-button small outline color="blue">Shajjay</button>
+          <button ion-button small outline color="blue">WBCs</button>
+          <button ion-button small outline color="blue">Khabbay</button>
+          <button ion-button small outline color="blue">Shajjay</button>
+        </div>
+
+
+
+      </ion-list>
+
+
+    </div>
+
+  </div>
+</ion-content>

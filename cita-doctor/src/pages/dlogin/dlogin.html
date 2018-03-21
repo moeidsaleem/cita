@@ -1,0 +1,35 @@
+<ion-content style="background-color:rgba(41, 128, 185,0.5);" padding class="transparent-header">
+    <ion-header>
+        <ion-navbar  style="margin-top:20px;">
+
+        </ion-navbar>
+    </ion-header>
+    <img class="logo" src="assets/imgs/logowa.png" />
+    <form (ngSubmit)="Login(usercreds)" #registerForm="ngForm">
+        <div padding>
+            <ion-item>
+                <ion-input [(ngModel)]="usercreds.email" name="email" id="email" type="text" placeholder="Email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input [(ngModel)]="usercreds.password" name="password" id="password" type="password" placeholder="Password"></ion-input>
+            </ion-item>
+            <button ion-button block outline color="light" [disabled]="!registerForm.form.valid" class="login-button">{{ 'login' | translate }}</button>
+        </div>
+    </form>
+    <div class="strike">
+        <span>OR</span>
+    </div>
+    <!-- {{response}} -->
+  
+  
+    <button ion-button block clear color="light" (click)="LoginFb()" class="login-button"><ion-icon name="logo-facebook"></ion-icon>{{ 'login_with_facebook' | translate }}</button>
+    <button ion-button block clear color="light" (click)="LoginGmail()" class="login-button"><ion-icon name="logo-google"></ion-icon>{{ 'login_with_google' | translate }}</button>
+
+</ion-content>
+<ion-footer>
+    <ion-toolbar class="footer">
+        <div>
+            <span (click)="Signup()">{{ 'sign_up_here' | translate }}</span>
+        </div>
+    </ion-toolbar>
+</ion-footer>

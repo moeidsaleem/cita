@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="onBackButton()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+
+   
+    <ion-title>{{ 'appointments' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card class="grad" *ngFor="let a of DoctorAppointments">
+    <ion-card-content>
+      <ion-card-title>
+        <span style="color:#fff;">{{a.patient_name}} </span>
+      </ion-card-title>
+      <p>
+        {{a.examination_fee}}
+      </p>
+      <p>
+        {{a.time_slot}}
+      </p>
+      <p *ngFor="let i of a.insurance">
+        {{i.company_name}}
+      </p>
+
+
+      <button ion-button clear icon-left (click)="OpenPhoneApp(a.phone)">
+        <ion-icon name='call' is-active="false"></ion-icon>
+      </button>
+      <button ion-button color="secondary" (click)="OpenMessageApp(a.phone)" clear icon-left>
+        <ion-icon name='text' is-active="false"></ion-icon>
+      </button>
+
+
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

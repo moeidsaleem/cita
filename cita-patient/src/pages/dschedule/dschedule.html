@@ -1,0 +1,261 @@
+<!--
+  Generated template for the DschedulePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Schedule</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div padding>
+    <ion-segment [(ngModel)]="Schedule">
+      <ion-segment-button value="Summary">
+        Schedule Summmary
+      </ion-segment-button>
+      <ion-segment-button value="Management">
+        Schedule Management
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="Schedule">
+    <ion-list *ngSwitchCase="'Management'">
+      <ion-card class="grad">
+        <ion-card-content>
+          <ion-item no-lines>
+            <h2 style="color:#ffffff;">Confirm Availability</h2>
+            <ion-icon item-start name="calendar" color="lightwa"></ion-icon>
+            <ion-icon item-end name="information-circle" color="lightwa"></ion-icon>
+          </ion-item>
+
+          <hr>
+          <ion-item no-lines>
+            <ion-label> This Week</ion-label>
+            <ion-toggle checked="false"></ion-toggle>
+          </ion-item>
+
+          <ion-item no-lines>
+            <ion-label> Next Week</ion-label>
+            <ion-toggle checked="false"></ion-toggle>
+          </ion-item>
+
+
+          <ion-item no-lines>
+            <ion-label> 01 feb - 06 feb</ion-label>
+            <ion-toggle checked="false"></ion-toggle>
+          </ion-item>
+
+          <ion-item no-lines>
+            <ion-label> 07 feb - 13 feb</ion-label>
+            <ion-toggle checked="false"></ion-toggle>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="grad">
+        <ion-card-content>
+          <ion-item no-lines>
+            <h2 style="color:#ffffff;">Clinic Working Hours</h2>
+            <ion-icon item-start name="clock" color="lightwa"></ion-icon>
+            <ion-icon item-end name="create" color="lightwa"></ion-icon>
+          </ion-item>
+
+          <hr>
+
+          <ion-item no-lines>
+            <ion-label> Monday
+              <br>
+              <p class="timeText">6:00am - 9:00pm</p>
+            </ion-label>
+            <ion-toggle checked="true"></ion-toggle>
+
+          </ion-item>
+
+          <ion-item no-lines>
+            <ion-label> Tuesday
+              <br>
+              <p class="timeText">6:00am - 9:00pm</p>
+            </ion-label>
+            <ion-toggle checked="false"></ion-toggle>
+          </ion-item>
+
+          <ion-item no-lines>
+            <ion-label> Wednesday
+              <br>
+              <p class="timeText">6:00am - 9:00pm</p>
+            </ion-label>
+            <ion-toggle checked="false"></ion-toggle>
+          </ion-item>
+
+          <ion-item no-lines>
+            <ion-label> Thrusday
+              <br>
+              <p class="timeText">6:00am - 9:00pm</p>
+            </ion-label>
+            <ion-toggle checked="false"></ion-toggle>
+          </ion-item>
+
+          <ion-item no-lines>
+            <ion-label> Friday
+              <br>
+              <p class="timeText">6:00am - 9:00pm</p>
+            </ion-label>
+            <ion-toggle checked="false"></ion-toggle>
+          </ion-item>
+          <ion-item no-lines>
+            <ion-label> Saturday
+              <br>
+              <p class="timeText">6:00am - 9:00pm</p>
+            </ion-label>
+            <ion-toggle checked="false"></ion-toggle>
+          </ion-item>
+
+          <ion-item no-lines>
+            <ion-label> Sunday
+              <br>
+              <p class="timeText">6:00am - 9:00pm</p>
+            </ion-label>
+            <ion-toggle checked="false"></ion-toggle>
+          </ion-item>
+
+
+
+
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'Summary'">
+      <ion-card class="grad">
+        <ion-card-content>
+          <ion-item no-lines>
+            <ion-grid>
+              <ion-row class="textClass">
+                <ion-col col-5>
+                  <small class="datewa">Saturday
+                    <br> 29 Jan </small>
+                </ion-col>
+                <ion-col col-5>
+                  <small class="appointwa">06
+                    <br>Bookings</small>
+                </ion-col>
+                <ion-col col-2></ion-col>
+              </ion-row>
+            </ion-grid>
+            <ion-icon item-end name="calendar" color="primary" (click)="openScheduleModal()"></ion-icon>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="grad">
+        <ion-card-content>
+          <ion-item no-lines>
+            <ion-grid>
+              <ion-row class="textClass">
+                <ion-col col-5>
+                  <small class="datewa">Sunday
+                    <br> 29 feb </small>
+                </ion-col>
+                <ion-col col-5>
+                  <small class="appointwa">06
+                    <br>Bookings</small>
+                </ion-col>
+                <ion-col col-2></ion-col>
+              </ion-row>
+            </ion-grid>
+            <ion-icon item-end name="calendar" color="primary" (click)="openScheduleModal()"></ion-icon>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="grad">
+          <ion-card-content>
+            <ion-item no-lines>
+              <ion-grid>
+                <ion-row class="textClass">
+                  <ion-col col-5>
+                    <small class="datewa">Saturday
+                      <br> 29 Jan </small>
+                  </ion-col>
+                  <ion-col col-5>
+                    <small class="appointwa">06
+                      <br>Bookings</small>
+                  </ion-col>
+                  <ion-col col-2></ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-icon item-end name="calendar" color="primary" (click)="openScheduleModal()"></ion-icon>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="grad">
+          <ion-card-content>
+            <ion-item no-lines>
+              <ion-grid>
+                <ion-row class="textClass">
+                  <ion-col col-5>
+                    <small class="datewa">Sunday
+                      <br> 29 feb </small>
+                  </ion-col>
+                  <ion-col col-5>
+                    <small class="appointwa">06
+                      <br>Bookings</small>
+                  </ion-col>
+                  <ion-col col-2></ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-icon item-end name="calendar" color="primary" (click)="openScheduleModal()"></ion-icon>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="grad">
+            <ion-card-content>
+              <ion-item no-lines>
+                <ion-grid>
+                  <ion-row class="textClass">
+                    <ion-col col-5>
+                      <small class="datewa">Saturday
+                        <br> 29 Jan </small>
+                    </ion-col>
+                    <ion-col col-5>
+                      <small class="appointwa">06
+                        <br>Bookings</small>
+                    </ion-col>
+                    <ion-col col-2></ion-col>
+                  </ion-row>
+                </ion-grid>
+                <ion-icon item-end name="calendar" color="primary" (click)="openScheduleModal()"></ion-icon>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+          <ion-card class="grad">
+            <ion-card-content>
+              <ion-item no-lines>
+                <ion-grid>
+                  <ion-row class="textClass">
+                    <ion-col col-5>
+                      <small class="datewa">Sunday
+                        <br> 29 feb </small>
+                    </ion-col>
+                    <ion-col col-5>
+                      <small class="appointwa">06
+                        <br>Bookings</small>
+                    </ion-col>
+                    <ion-col col-2></ion-col>
+                  </ion-row>
+                </ion-grid>
+                <ion-icon item-end name="calendar" color="primary" (click)="openScheduleModal()"></ion-icon>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+
+    </ion-list>
+  </div>
+</ion-content>
