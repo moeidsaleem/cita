@@ -65,6 +65,9 @@ export class MyApp {
   contactUsPage() {
     this.nav.push('ContactusPage');
   }
+  offerPage(){  
+    this.nav.push('OffersPage')
+  }
 
   getCurrentLanguage(){
     if(localStorage.getItem("lng")){

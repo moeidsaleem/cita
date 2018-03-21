@@ -11,7 +11,7 @@
         <h4 *ngIf="no_appointments" style="text-align:center;">{{ 'no_app' | translate }}</h4>
     <ion-list *ngFor="let a of appointments">
         
-        <ion-list-header>
+        <ion-list-header style="background-color:rgba(0, 0, 0, 0.039)">
                 <ion-avatar *ngIf="!a.fb_linked && !a.google_linked && a.doctor_profile_pic" item-start>
                         <img src="http://doctorsapp.itwaly.co.uk/Content/uploads/{{a.doctor_profile_pic}}">
                     </ion-avatar>
@@ -22,7 +22,7 @@
                         <img src="assets/imgs/noimage.png">
                     </ion-avatar>
 
-            <p class="username">{{a.doctor_name}}</p>
+            <p class="username" >{{a.doctor_name}}</p>
             <p>{{a.doctor_specialization}}</p>
         </ion-list-header>
         <ion-item no-lines>
@@ -39,13 +39,13 @@
             <ion-icon name='navigate' (click)="OpenMap(a.location_lat,a.location_lng)" color="secondary" item-end></ion-icon>
         </ion-item>
 
-        <ion-item no-lines>
-            <ion-label class="label" *ngIf="a.status == 'pending'" style="color:dodgerblue;">{{ 'pending' | translate }} </ion-label>
-            <ion-label class="label" *ngIf="a.status == 'active'" style="color:green;">{{ 'active' | translate }}</ion-label>
-            <ion-label class="label" style="color:red;" *ngIf="a.status == 'canceled'">{{ 'cancel' | translate }} </ion-label>
+        <ion-item no-lines text-center>
+            <ion-label small class="label" *ngIf="a.status == 'pending'" style="color:rgb(216, 174, 7);font-size:15px">{{ 'pending' | translate }} <ion-icon name="warning"></ion-icon> </ion-label>
+            <ion-label class="label" *ngIf="a.status == 'active'" style="color:green;">{{ 'active' | translate }} <ion-icon name="play"></ion-icon></ion-label>
+            <ion-label class="label" style="color:red;" *ngIf="a.status == 'canceled'">{{ 'cancel' | translate }} <ion-icon name="stopwatch"></ion-icon></ion-label>
          </ion-item>
 
-        <div padding>
+        <div padding text-center>
             <button ion-button small color="danger" *ngIf="a.status == 'pending'" (click)="CancelAppointment(a.appointment_id)">{{ 'button_cancel' | translate }}</button>
             <button ion-button small color="danger" *ngIf="a.status == 'canceled'" (click)="Delete(a.appointment_id)">{{ 'btn_delete' | translate }}</button>
 

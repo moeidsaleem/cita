@@ -56,7 +56,7 @@ export class SearchPage {
    
     // let connectSubscription = this.network.onConnect().subscribe(() => {
       this.loading = this.loadingCtrl.create({
-        content: "Loading..!",
+        content: "Loading",
       });
       this.loading.present();
       this.Speciality();

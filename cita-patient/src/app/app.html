@@ -18,6 +18,7 @@
           <p class="namewa">{{ 'menu_about' | translate }}</p>
         </button>
       </ion-list>
+   
       <ion-list no-lines class="faasla">
         <button ion-item detail-none (click)="contactUsPage()" menuClose>
           <ion-icon item-start name="call"></ion-icon>
@@ -25,10 +26,17 @@
         </button>
       </ion-list>
       <ion-list no-lines class="faasla">
+        <button menuClose="left" ion-item detail-none (click)="offerPage()">
+          <ion-icon item-start name="information-circle"></ion-icon>
+          <p class="namewa">{{ 'offer_page' | translate }}</p>
+        </button>
+      </ion-list>
+      <ion-list no-lines class="faasla">
         <button ion-item detail-none (click)="Language()">
           <ion-icon item-start name="information-circle"></ion-icon>
           <p class="namewa">{{ 'menu_language' | translate }}</p>
         </button>
+  
       </ion-list>
       <ion-list radio-group *ngIf="language" [(ngModel)]="lng" (ionChange)="ChangeLanguage(lng)">
         <ion-item>

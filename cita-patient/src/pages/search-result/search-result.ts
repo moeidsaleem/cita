@@ -74,7 +74,7 @@ export class SearchResultPage {
   rate = 4;
   ionViewWillEnter() {
       this.loading = this.loadingCtrl.create({
-        content: "Loading..!",
+        content: "Loading",
       });
       this.loading.present();
       this.LoadDoctors().then(() => {

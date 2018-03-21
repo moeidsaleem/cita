@@ -58,7 +58,7 @@ export class FavoritePage {
     if(this.auth.isLoggedin)
     {
     this.loading = this.loadingCtrl.create({
-      content: "Loading..!",
+      content: "Loading",
     });
     this.loading.present();
     this.DownloadFavourites().then(() => {

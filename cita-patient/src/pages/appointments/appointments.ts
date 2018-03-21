@@ -42,7 +42,7 @@ export class AppointmentsPage {
     if(this.auth.isLoggedin)
     {
   this.loading = this.loadingCtrl.create({
-      content: "Loading..!",
+      content: "Loading",
     });
     this.loading.present();
     this.DownloadAppointments().then(() => {

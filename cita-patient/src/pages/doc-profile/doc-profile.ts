@@ -67,10 +67,12 @@ export class DocProfilePage {
 
     //let connectSubscription = this.network.onConnect().subscribe(() => {
     this.loading = this.loadingCtrl.create({
-      content: "Loading..!",
+      content: "Loading",
     });
     this.loading.present();
     this.LoadDoctor().then(() => {
+      this.loading.dismissAll();
+
       this.temp = this.schedule[this.currentIndex].time_slots;
       this.day = this.schedule[this.currentIndex].day;
       this.date = this.schedule[this.currentIndex].date;
@@ -86,7 +88,6 @@ export class DocProfilePage {
 
       this.ChangeColor();
 
-      this.loading.dismissAll();
 
   });
   let disconnectSubscription = this.network.onDisconnect().subscribe(() => {
