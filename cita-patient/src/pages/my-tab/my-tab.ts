@@ -16,6 +16,7 @@ export class MyTabPage {
   favoriteRoot = 'FavoritePage'
   appointmentsRoot = 'AppointmentsPage'
   lng;
+  test=true;
 
 
   constructor(public navCtrl: NavController,private auth : AuthProvider,private app : MyApp)

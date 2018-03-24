@@ -39,7 +39,8 @@ export class MyApp {
 
   Logout()
   {
-    this.nav.push("PloginPage");
+   this.auth.logout();
+    this.nav.setRoot("PloginPage");
   }
   searchPage() {
     this.nav.push('SearchResultPage');

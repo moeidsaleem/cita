@@ -47,12 +47,19 @@
                          
                         </ion-list>
 
-                        <ion-card class="ab" (click)="auth.logout()">
+                        <ion-card class="ab" (click)="openSubscription()">
                             <ion-list-header style="padding-top:0px;">
-                                <p class="info">{{ 'logout' | translate }}</p>
-                                <ion-icon item-start name="lock" color="primary"></ion-icon>
+                                <p class="info">{{ 'subscriptions' | translate }}</p>
+                                <ion-icon item-start name="cash" color="primary"></ion-icon>
                                   </ion-list-header>
                             </ion-card>
+
+                            <ion-card class="ab" (click)="auth.logout()">
+                              <ion-list-header style="padding-top:0px;">
+                                  <p class="info">{{ 'logout' | translate }}</p>
+                                  <ion-icon item-start name="lock" color="primary"></ion-icon>
+                                    </ion-list-header>
+                              </ion-card>
                 </ion-list>
 
 

@@ -52,7 +52,8 @@ export class AuthProvider {
     this.fb.logout();
     this.googlePlus.logout();
     window.localStorage.clear();
-    window.location.reload();
+    return;
+//    window.location.reload();
   }
 
   LoginUser(userData) {

@@ -132,16 +132,37 @@ export class DschedulePage {
 
   Schedule = "Summary";
 
-  ionViewWillEnter() {
+  ionViewDidLoad(){
     console.log('ionViewDidLoad DschedulePage');
+
     if(this.net.networkCheck)
     {
     this.loading = this.loadingCtrl.create({
-      content: "Loading...!",
+      content: "Loading",
     });
-    this.loading.present();
+    //this.loading.present();
     this.LoadData().then(() => {
       this.loading.dismissAll();
+
+    });
+
+    this.GetSchedules();
+  }
+  else
+  {
+    this.pAlert("No Internet Connection");
+  }
+
+  }
+
+  ionViewWillEnter() {
+    console.log('ionViewDidEnter DschedulePage');
+    if(this.net.networkCheck)
+    {
+   
+    //this.loading.present();
+    this.LoadData().then(() => {
+    // this.loading.dismissAll();
 
     });
 

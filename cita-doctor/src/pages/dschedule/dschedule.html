@@ -34,12 +34,12 @@
 
                     <hr>
                     <ion-item no-lines>
-                        <ion-label> {{ 'schedule_this_week' | translate }}</ion-label>
+                        <ion-label style="color:#ffffff;"> {{ 'schedule_this_week' | translate }}</ion-label>
                         <ion-toggle [(ngModel)]="isToggledC" (ionChange)="notify()"></ion-toggle>
                     </ion-item>
 
                     <ion-item no-lines>
-                        <ion-label>{{ 'schedule_next_week' | translate }}</ion-label>
+                        <ion-label style="color:#ffffff;">{{ 'schedule_next_week' | translate }}</ion-label>
                         <ion-toggle [(ngModel)]="isToggledN" (ionChange)="notifyN()"></ion-toggle>
                     </ion-item>
 

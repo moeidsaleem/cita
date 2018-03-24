@@ -49,7 +49,7 @@
         </ion-item>
       </ion-list>
       <ion-list no-lines class="faasla">
-        <button *ngIf="auth.isLoggedin" menuClose="left" ion-item detail-none (click)="auth.logout()" menuClose>
+        <button  menuClose="left" ion-item detail-none (click)="Logout()" menuClose>
           <ion-icon item-start name="log-out"></ion-icon>
           <p class="namewa">{{ 'menu_logout' | translate }}</p>
         </button>

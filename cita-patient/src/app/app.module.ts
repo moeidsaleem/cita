@@ -24,7 +24,8 @@ import { Ionic2RatingModule } from 'ionic2-rating';
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { Http, HttpModule } from '@angular/http';
-import { HttpClient, HttpClientModule } from "@angular/common/http"; 
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { DataProvider } from '../providers/data/data'; 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, "./assets/i18n/", ".json");
@@ -71,7 +72,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     LocalNotifications,
     GooglePlus,
     Network,
-    NetworkProvider
+    NetworkProvider,
+    DataProvider
   ]
 })
 export class AppModule {}

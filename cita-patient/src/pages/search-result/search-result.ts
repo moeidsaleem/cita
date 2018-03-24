@@ -73,15 +73,20 @@ export class SearchResultPage {
   }
   rate = 4;
   ionViewWillEnter() {
-      this.loading = this.loadingCtrl.create({
+      if(this.doctors_list==null){
+
+      
+    this.loading = this.loadingCtrl.create({
         content: "Loading",
       });
+    
       this.loading.present();
       this.LoadDoctors().then(() => {
 
         this.loading.dismissAll();
 
       });
+    }
 
     // let disconnectSubscription = this.network.onDisconnect().subscribe(() => {
     //   this.presentToast();

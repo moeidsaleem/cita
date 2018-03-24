@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform, NavController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Nav } from 'ionic-angular';
@@ -18,12 +18,23 @@ export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private auth: AuthProvider,
+  constructor( platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private auth: AuthProvider,
     private notify: NotificationProvider, private translate: TranslateService) {
 
     if (!this.auth.isLoggedIn) {
       this.rootPage = "DloginPage";
+      
     }
+    if(this.auth.isLoggedIn){
+      if(this.auth.checkExpiry()>0){
+        //expired 
+        console.log('plan has expired');
+        this.rootPage ='ExpiredPage';
+      }
+      
+
+    } 
+  
 
     this.setDefaultLanguage();
 
@@ -33,6 +44,10 @@ export class MyApp {
 
     });
   }
+
+
+
+ 
 
   getCurrentLanguage(){
     if(localStorage.getItem("lng")){

@@ -1,0 +1,62 @@
+<!--
+  Generated template for the SubscriptionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title >Subscriptions</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    
+    <ion-row >
+      <ion-col text-center>
+          <h2 style="font-family:fantasy;color:rgba(74, 74, 165, 0.76)" >Subscription plan
+            <small  style="font-family:cursive;color:rgba(179, 7, 7, 0.637)" *ngIf="auth.checkExpiry()>0">( Expired )</small>
+          </h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus inventore cum aperiam tempore modi laboriosam doloribus eius. Sapiente, aspernatur asperiores? Laudantium aliquid eum quo quibusdam modi, facilis cupiditate beatae impedit.</p>
+  
+        <hr>
+        <ion-row>
+          <ion-col col-4>
+              <h6>Current Plan:</h6> 
+              <h6>Validity:</h6> 
+            </ion-col>
+          <ion-col col-6>
+              <h5 style="font-family:fantasy;color:rgba(32, 109, 32, 0.575)">FREE PLAN</h5>
+              <h5 style="font-family:fantasy;color:rgba(109, 32, 32, 0.575)" *ngIf="auth.checkExpiry()<=0">{{auth?.checkExpiry()}}</h5>
+              <h5 style="font-family:fantasy;color:rgba(179, 7, 7, 0.637)" *ngIf="auth.checkExpiry()>0">Expired</h5>
+          </ion-col>
+        </ion-row>
+        <hr>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row text-center>
+      <ion-col >
+        <h2 style="font-family:cursive">Upgrade to Premium</h2>
+          <ion-card class="grad" *ngFor="let x of plans">
+              <ion-card-content>
+                <ion-card-title>
+                  <span style="color:#fff;font-family:fantasy">{{x?.plan_name}} </span>
+                </ion-card-title>
+                <p style="color:white;font-family:cursive">{{x?.description}}</p>
+                <!-- <p>{{x?.description}}</p> -->
+        
+          
+               
+                <button ion-button full>UPGRADE </button>
+        
+              </ion-card-content>
+            </ion-card>
+          
+        
+      </ion-col>
+    </ion-row>
+  </ion-content>
+  

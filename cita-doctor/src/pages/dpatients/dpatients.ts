@@ -31,7 +31,7 @@ private app : MyApp) {
 
 
 
-  ionViewWillEnter() 
+  ionViewDidLoad() 
   {
     this.loading = this.loadingCtrl.create({
       content : "Loading....",
@@ -40,6 +40,18 @@ private app : MyApp) {
 
     this.LoadData().then(() => {
       this.loading.dismissAll();
+    },err=>{
+      console.log(err);
+    });
+  }
+
+  ionViewWillEnter() 
+  {
+ 
+   // this.loading.present();
+
+    this.LoadData().then(() => {
+    //  this.loading.dismissAll();
     });
   }
 

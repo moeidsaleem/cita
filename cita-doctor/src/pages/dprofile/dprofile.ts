@@ -92,16 +92,12 @@ export class DprofilePage {
     this.navCtrl.push("AppointmentsPage");
   }
 
-
-
-
-  ionViewWillEnter() {
-
+  ionViewDidLoad(){
     if (this.network.networkCheck) {
       this.loading = this.loadingCtrl.create({
-        content: "Loading...!",
+        content: "Loading.",
       });
-      this.loading.present();
+      //this.loading.present();
       this.LoadProfile().then(() => {
         console.log("Loading Dismissed");
         this.loading.dismissAll();
@@ -114,6 +110,31 @@ export class DprofilePage {
     else {
       this.pAlert("No Internet Connection");
     }
+
+  }
+
+
+
+
+  ionViewWillEnter() {
+    if (this.network.networkCheck) {
+      this.loading = this.loadingCtrl.create({
+        content: "Loading.",
+      });
+      //this.loading.present();
+      this.LoadProfile().then(() => {
+        console.log("Loading Dismissed");
+       // this.loading.dismissAll();
+
+      }, () => {
+      //  this.loading.dismissAll();
+      });
+
+    }
+    else {
+      this.pAlert("No Internet Connection");
+    }
+   
 
   }
   loadMap(lat, lng) {

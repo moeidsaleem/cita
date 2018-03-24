@@ -42,6 +42,10 @@ export class SettingsPage {
 
   }
 
+  openSubscription(){
+    this.navCtrl.push('SubscriptionPage');
+  }
+
   Language() {
     if (this.language == false) {
       this.language = true;

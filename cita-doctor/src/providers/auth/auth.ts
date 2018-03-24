@@ -19,6 +19,8 @@ export class AuthProvider {
   isLoggedIn = false;
   loginfb = false;
   loginggmail = false;  
+  joinDate='2018-01-25';
+
   
 
 
@@ -36,6 +38,7 @@ export class AuthProvider {
       this.isLoggedIn = true;
       this.user_id = window.localStorage.getItem('user_id');
       this.doctor_name = window.localStorage.getItem('doctor_name');
+      
 
     }
     else {
@@ -77,6 +80,28 @@ export class AuthProvider {
       //   }
       // }
   }
+
+  checkExpiry(){
+    let current = new Date();
+    let expiry = new Date(this.joinDate);
+    console.log(this.dateDiff(current,expiry));
+    console.log(this.isLoggedIn);
+    return this.dateDiff(current,expiry);
+  
+   
+  }
+  dateDiff(str1, str2){
+    var diff = Date.parse(str2) - Date.parse(str1); 
+    return Math.ceil(diff / 86400000)
+    // return isNaN(diff) ? NaN : {
+    //     diff: diff,
+    //     ms: Math.ceil(diff % 1000),
+    //     s: Math.ceil(diff / 1000 % 60),
+    //     m: Math.ceil(diff / 60000 % 60),
+    //     h: Math.ceil(diff / 3600000 % 24),
+    //     d: Math.ceil(diff / 86400000)
+    // };
+}
 
   
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, LoadingController, Loading } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController, Loading, MenuController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 import { ServerProvider } from '../../providers/server/server';
@@ -27,7 +27,7 @@ export class PloginPage {
     password: ''
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
+  constructor(private menu:MenuController,public navCtrl: NavController, public navParams: NavParams,
     public loadingCtrl: LoadingController, private alertCtrl: AlertController, private auth: AuthProvider,
     private fb: Facebook,private server : ServerProvider,private http : Http,private googlePlus: GooglePlus,
     private network : Network,public toastCtrl: ToastController) {
@@ -36,6 +36,7 @@ export class PloginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PloginPage');
+    this.menu.swipeEnable(false);
   }
 
   SignUp() {
@@ -178,14 +179,18 @@ export class PloginPage {
 
 
     this.loading = this.loadingCtrl.create({
-      content: "Loading..!",
+      content: "Loading",
     });
     this.loading.present();
     this.auth.LoginUser(this.usercreds).then(data => {
       this.loading.dismissAll();
       console.log(data);
       if (data) {
-        this.navCtrl.setRoot('SearchPage');
+        this.navCtrl.setRoot('SearchPage').then(r=>{
+          this.menu.swipeEnable(true);
+          
+
+        })
       }
       else {
         this.failedAlert();

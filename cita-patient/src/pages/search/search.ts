@@ -6,7 +6,8 @@ import {
   LoadingController,
   Loading,
   AlertController,
-  ModalController
+  ModalController,
+  MenuController
 } from 'ionic-angular';
 import { Nav } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
@@ -39,7 +40,7 @@ export class SearchPage {
   insurance_url;
   speciality_id; area_id; city_id; insurance_id; doctorname;
   lng;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController,
+  constructor(private menu:MenuController, public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController,
     private loadingCtrl: LoadingController, private http: Http, private server: ServerProvider,
   private network : Network,public toastCtrl: ToastController,private app : MyApp) {
 
@@ -53,12 +54,13 @@ export class SearchPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchPage');
+
    
     // let connectSubscription = this.network.onConnect().subscribe(() => {
       this.loading = this.loadingCtrl.create({
         content: "Loading",
       });
-      this.loading.present();
+     // this.loading.present();
       this.Speciality();
       this.Cities();
       this.AllAreas();
@@ -102,6 +104,7 @@ export class SearchPage {
     });
     toast.present();
   }
+  
 
   InsuranceId(insurance_id) {
 
