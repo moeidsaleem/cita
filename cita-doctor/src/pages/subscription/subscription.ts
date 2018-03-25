@@ -59,8 +59,9 @@ payPlan(plan){
   this.iap.buy(plan.productId).then(res=>{
     //update Profile with joiningDate and limit 
     this.auth.limit += plan.validity;
-  }err=>{
-
+  },err=>{
+   // this.auts
+   console.log(err);
   });
 }
 }
