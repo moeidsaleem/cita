@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar color="primary">
+  <ion-navbar color="primary" hideBackButton="true">
     <ion-title >Subscriptions</ion-title>
   </ion-navbar>
 
@@ -28,8 +28,8 @@
               <h6>Validity:</h6> 
             </ion-col>
           <ion-col col-6>
-              <h5 style="font-family:fantasy;color:rgba(32, 109, 32, 0.575)">FREE PLAN</h5>
-              <h5 style="font-family:fantasy;color:rgba(109, 32, 32, 0.575)" *ngIf="auth.checkExpiry()<=0">{{auth?.checkExpiry()}}</h5>
+              <h5 style="font-family:fantasy;color:rgba(32, 109, 32, 0.575)">{{plan?.plan_name}}</h5>
+              <h5 style="font-family:fantasy;color:rgba(109, 32, 32, 0.575)" *ngIf="auth.checkExpiry()<=0">{{auth?.checkExpiry() * -1 }} Days Left</h5>
               <h5 style="font-family:fantasy;color:rgba(179, 7, 7, 0.637)" *ngIf="auth.checkExpiry()>0">Expired</h5>
           </ion-col>
         </ion-row>
@@ -40,7 +40,7 @@
     <ion-row text-center>
       <ion-col >
         <h2 style="font-family:cursive">Upgrade to Premium</h2>
-          <ion-card class="grad" *ngFor="let x of plans">
+          <ion-card class="grad" *ngFor="let x of plans" (click)="payPlan(x)">
               <ion-card-content>
                 <ion-card-title>
                   <span style="color:#fff;font-family:fantasy">{{x?.plan_name}} </span>
@@ -48,7 +48,7 @@
                 <p style="color:white;font-family:cursive">{{x?.description}}</p>
                 <!-- <p>{{x?.description}}</p> -->
         
-          
+              <h6 style="color:red;font-family:cursive">{{x?.price | currency:'BHD':'fr'}}</h6>
                
                 <button ion-button full>UPGRADE </button>
         

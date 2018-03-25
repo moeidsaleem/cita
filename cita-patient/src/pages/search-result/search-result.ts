@@ -186,6 +186,7 @@ export class SearchResultPage {
       this.http.get(this.dname_url).map(res => res.json()).subscribe(data => {
         if (data['status'] == "success") {
           this.doctors_list = data['data'];
+          console.log(this.doctors_list);
           if (this.doctors_list.fb_linked == 1 || this.doctors_list.google_linked == 1) {
             this.pic = this.doctors_list.profile_pic_url;
             this.CheckPicture(this.pic);

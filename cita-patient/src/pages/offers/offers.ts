@@ -29,4 +29,10 @@ export class OffersPage {
     console.log('ionViewDidLoad OffersPage');
   }
 
+  docsProfilePage(event, profile) {
+    this.navCtrl.push('DocProfilePage', {
+      profile: profile
+    });
+  }
+
 }

@@ -6,8 +6,8 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>offers</ion-title>
+  <ion-navbar color="primary">
+    <ion-title >offers</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,7 +16,7 @@
 <ion-content padding>
   
 
-  <ion-card *ngFor="let x of offers">
+  <ion-card *ngFor="let x of offers" (click)="docsProfilePage($event,d)">
     <!-- <img src=""/> -->
     <img src="{{x?.img}}" >
 <!-- style="width:100%;height:120px"> -->

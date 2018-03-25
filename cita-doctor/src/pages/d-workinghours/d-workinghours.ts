@@ -79,6 +79,14 @@ export class DWorkinghoursPage {
     this.GetScheduleList = this.server.url + "Doctor/GetScheduleList?doctor_id="+this.auth.user_id;
 
   }
+minuteValues='0,30';
+limit;
+  setLimit(e){
+    console.log(e.minute);
+    this.minuteValues = this.minuteValues+','+e.minute;
+    console.log(this.minuteValues);
+
+  }
 
   setToggles(data){
 

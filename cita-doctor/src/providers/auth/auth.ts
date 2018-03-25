@@ -19,7 +19,9 @@ export class AuthProvider {
   isLoggedIn = false;
   loginfb = false;
   loginggmail = false;  
-  joinDate='2018-01-25';
+  joinDate='2018-01-30';
+  limit=60;
+
 
   
 
@@ -86,7 +88,8 @@ export class AuthProvider {
     let expiry = new Date(this.joinDate);
     console.log(this.dateDiff(current,expiry));
     console.log(this.isLoggedIn);
-    return this.dateDiff(current,expiry);
+    console.log( this.limit-(this.dateDiff(current,expiry)) );
+    return -this.limit-(this.dateDiff(current,expiry))
   
    
   }

@@ -37,6 +37,11 @@ export class MyApp {
     }
   }
 
+  goHome(){
+    this.nav.setRoot('SearchPage');
+    this.nav.popToRoot();
+  }
+
   Logout()
   {
    this.auth.logout();

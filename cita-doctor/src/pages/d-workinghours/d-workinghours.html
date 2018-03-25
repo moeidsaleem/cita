@@ -34,6 +34,16 @@
   <ion-list>
 
     <ion-item>
+      <ion-label small>Custom Time Interval ( {{minuteValues }} )</ion-label>
+      <ion-datetime displayFormat="mm " pickerFormat="mm "  (ionChange)="setLimit($event)"></ion-datetime>
+      <ion-row>
+        <ion-col>
+          
+        </ion-col>
+      </ion-row>
+      
+    </ion-item>
+    <ion-item>
       <ion-label> {{ 'saturday' | translate }}</ion-label>
       <ion-toggle [(ngModel)]="SaturdayT" (ionChange)="click()"></ion-toggle>
 
@@ -47,12 +57,12 @@
 
           <ion-col>
 
-            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeStartsSat" (ionChange)="timeStartsclickSat(timeStartsSat)"></ion-datetime>
+            <ion-datetime displayFormat="h:mm A" [minuteValues]="minuteValues"  pickerFormat="h mm A" [(ngModel)]="timeStartsSat" (ionChange)="timeStartsclickSat(timeStartsSat)"></ion-datetime>
 
           </ion-col>
 
           <ion-col>
-            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeEndsSat" (ionChange)="timeEndsclickSat(timeEndsSat)"></ion-datetime>
+            <ion-datetime displayFormat="h:mm A" [minuteValues]="minuteValues"  pickerFormat="h mm A" [(ngModel)]="timeEndsSat" (ionChange)="timeEndsclickSat(timeEndsSat)"></ion-datetime>
 
           </ion-col>
 
@@ -79,11 +89,11 @@
         <ion-row>
 
           <ion-col>
-            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeStartsSun" (ionChange)="timeStartsclickSun(timeStartsSun)"></ion-datetime>
+            <ion-datetime displayFormat="h:mm A" [minuteValues]="minuteValues"  pickerFormat="h mm A" [(ngModel)]="timeStartsSun" (ionChange)="timeStartsclickSun(timeStartsSun)"></ion-datetime>
 
           </ion-col>
           <ion-col>
-            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeEndsSun" (ionChange)="timeEndsclickSun(timeEndsSun)"></ion-datetime>
+            <ion-datetime displayFormat="h:mm A" [minuteValues]="minuteValues"  pickerFormat="h mm A" [(ngModel)]="timeEndsSun" (ionChange)="timeEndsclickSun(timeEndsSun)"></ion-datetime>
 
           </ion-col>
 
@@ -110,11 +120,11 @@
         <ion-row>
 
           <ion-col>
-            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeStartsMon" (ionChange)="timeStartsclickMon(timeStartsMon)"></ion-datetime>
+            <ion-datetime displayFormat="h:mm A" [minuteValues]="minuteValues"  pickerFormat="h mm A" [(ngModel)]="timeStartsMon" (ionChange)="timeStartsclickMon(timeStartsMon)"></ion-datetime>
 
           </ion-col>
           <ion-col>
-            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeEndsMon" (ionChange)="timeEndsclickMon(timeEndsMon)"></ion-datetime>
+            <ion-datetime displayFormat="h:mm A" [minuteValues]="minuteValues"  pickerFormat="h mm A" [(ngModel)]="timeEndsMon" (ionChange)="timeEndsclickMon(timeEndsMon)"></ion-datetime>
 
           </ion-col>
 
@@ -143,12 +153,12 @@
         <ion-row>
 
           <ion-col>
-            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeStartsTue" (ionChange)="timeStartsclickTue(timeStartsTue)"></ion-datetime>
+            <ion-datetime displayFormat="h:mm A" [minuteValues]="minuteValues"  pickerFormat="h mm A" [(ngModel)]="timeStartsTue" (ionChange)="timeStartsclickTue(timeStartsTue)"></ion-datetime>
 
           </ion-col>
 
           <ion-col>
-            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeEndsTue" (ionChange)="timeEndsclickTue(timeEndsTue)"></ion-datetime>
+            <ion-datetime displayFormat="h:mm A" [minuteValues]="minuteValues"  pickerFormat="h mm A" [(ngModel)]="timeEndsTue" (ionChange)="timeEndsclickTue(timeEndsTue)"></ion-datetime>
 
           </ion-col>
 
@@ -175,11 +185,11 @@
         <ion-row>
 
           <ion-col>
-            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeStartsWed" (ionChange)="timeStartsclickWed(timeStartsWed)"></ion-datetime>
+            <ion-datetime displayFormat="h:mm A" [minuteValues]="minuteValues"  pickerFormat="h mm A" [(ngModel)]="timeStartsWed" (ionChange)="timeStartsclickWed(timeStartsWed)"></ion-datetime>
 
           </ion-col>
           <ion-col>
-            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeEndsWed" (ionChange)="timeEndsclickWed(timeEndsWed)"></ion-datetime>
+            <ion-datetime displayFormat="h:mm A" [minuteValues]="minuteValues"  pickerFormat="h mm A" [(ngModel)]="timeEndsWed" (ionChange)="timeEndsclickWed(timeEndsWed)"></ion-datetime>
 
           </ion-col>
 
@@ -206,12 +216,12 @@
 
           <ion-col>
 
-            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeStartsThu" (ionChange)="timeStartsclickThu(timeStartsThu)"></ion-datetime>
+            <ion-datetime displayFormat="h:mm A" [minuteValues]="minuteValues"  pickerFormat="h mm A" [(ngModel)]="timeStartsThu" (ionChange)="timeStartsclickThu(timeStartsThu)"></ion-datetime>
 
           </ion-col>
 
           <ion-col>
-            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeEndsThu" (ionChange)="timeEndsclickThu(timeEndsThu)"></ion-datetime>
+            <ion-datetime displayFormat="h:mm A" [minuteValues]="minuteValues"  pickerFormat="h mm A" [(ngModel)]="timeEndsThu" (ionChange)="timeEndsclickThu(timeEndsThu)"></ion-datetime>
 
           </ion-col>
 
@@ -238,11 +248,11 @@
         <ion-row>
 
           <ion-col>
-            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeStartsFri" (ionChange)="timeStartsclickFri(timeStartsFri)"></ion-datetime>
+            <ion-datetime displayFormat="h:mm A" [minuteValues]="minuteValues"  pickerFormat="h mm A" [(ngModel)]="timeStartsFri" (ionChange)="timeStartsclickFri(timeStartsFri)"></ion-datetime>
 
           </ion-col>
           <ion-col>
-            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeEndsFri" (ionChange)="timeEndsclickFri(timeEndsFri)"></ion-datetime>
+            <ion-datetime displayFormat="h:mm A" [minuteValues]="minuteValues"  pickerFormat="h mm A" [(ngModel)]="timeEndsFri" (ionChange)="timeEndsclickFri(timeEndsFri)"></ion-datetime>
 
           </ion-col>
 

@@ -36,7 +36,7 @@ export class PloginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PloginPage');
-    this.menu.swipeEnable(false);
+    // this.menu.swipeEnable(false);
   }
 
   SignUp() {
@@ -186,11 +186,7 @@ export class PloginPage {
       this.loading.dismissAll();
       console.log(data);
       if (data) {
-        this.navCtrl.setRoot('SearchPage').then(r=>{
-          this.menu.swipeEnable(true);
-          
-
-        })
+        this.navCtrl.setRoot('SearchPage')
       }
       else {
         this.failedAlert();

@@ -6,38 +6,35 @@
     </div>
 
     <div margin-top>
-      <ion-list no-lines>
+        <ion-list no-lines>
+            <button ion-item detail-none (click)="goHome()" menuClose>
+              <ion-icon item-start name="home"></ion-icon>
+              <p class="namewa">{{ 'home' | translate }}</p>
+            </button>
+        
+
         <button ion-item detail-none (click)="profileSettingPage()" menuClose>
           <ion-icon item-start name="cog"></ion-icon>
           <p class="namewa">{{ 'menu_settings' | translate }}</p>
         </button>
-      </ion-list>
-      <ion-list no-lines class="faasla">
         <button menuClose="left" ion-item detail-none (click)="aboutUsPage()" menuClose>
           <ion-icon item-start name="information-circle"></ion-icon>
           <p class="namewa">{{ 'menu_about' | translate }}</p>
         </button>
-      </ion-list>
    
-      <ion-list no-lines class="faasla">
         <button ion-item detail-none (click)="contactUsPage()" menuClose>
           <ion-icon item-start name="call"></ion-icon>
           <p class="namewa">{{ 'menu_contact' | translate }}</p>
         </button>
-      </ion-list>
-      <ion-list no-lines class="faasla">
         <button menuClose="left" ion-item detail-none (click)="offerPage()">
-          <ion-icon item-start name="information-circle"></ion-icon>
+          <ion-icon item-start name="pricetag"></ion-icon>
           <p class="namewa">{{ 'offer_page' | translate }}</p>
         </button>
-      </ion-list>
-      <ion-list no-lines class="faasla">
         <button ion-item detail-none (click)="Language()">
           <ion-icon item-start name="information-circle"></ion-icon>
           <p class="namewa">{{ 'menu_language' | translate }}</p>
         </button>
   
-      </ion-list>
       <ion-list radio-group *ngIf="language" [(ngModel)]="lng" (ionChange)="ChangeLanguage(lng)">
         <ion-item>
           <ion-label>English</ion-label>
@@ -48,7 +45,6 @@
           <ion-radio value="arabic"></ion-radio>
         </ion-item>
       </ion-list>
-      <ion-list no-lines class="faasla">
         <button  menuClose="left" ion-item detail-none (click)="Logout()" menuClose>
           <ion-icon item-start name="log-out"></ion-icon>
           <p class="namewa">{{ 'menu_logout' | translate }}</p>
